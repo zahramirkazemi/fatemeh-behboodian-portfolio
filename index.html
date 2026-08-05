@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fatemeh Behboodian — UI/UX &amp; Product Designer</title>
+<meta name="description" content="UI/UX and product designer portfolio. Design systems, dashboards and marketplace flows for fintech, crypto and ride-hailing products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+  @media (max-width:1200px){
+    [data-wire-row]{flex-wrap:wrap !important;row-gap:56px !important}
+    [data-wire-row] [data-wire-line]{display:none !important}
+    [data-wire-row] > div{margin-top:0 !important}
+    [data-wire-row] > *{flex:0 1 calc(50% - 11px) !important;min-width:0 !important;min-height:0 !important}
+  }
+  @media (max-width:1000px){
+    [data-cols="hero"],[data-cols="story"],[data-cols="resume"],[data-cols="contact"]{grid-template-columns:1fr !important;gap:44px !important}
+    [data-cols="nums"]{grid-template-columns:repeat(2,1fr) !important}
+    [data-note]{position:static !important;left:auto !important;right:auto !important;bottom:auto !important;width:auto !important;max-width:320px;margin-top:22px}
+    [data-stick]{position:static !important}
+  }
+  @media (max-width:640px){
+    [data-cols="nums"]{grid-template-columns:1fr !important}
+    section{padding-left:20px !important;padding-right:20px !important}
+    [data-track]{padding-left:20px !important;padding-right:20px !important}
+  }
+  .skill-chip{transition:outline-color .15s ease,color .15s ease}
+  .skill-chip:hover{outline:1.5px solid #5B3DF5;color:#3A2FA8}
+  .field-input{transition:border-color .15s ease}
+  .field-input:focus{border-bottom-color:#E86A9A}
+  .btn-send{transition:background .15s ease}
+  .btn-send:hover{background:#5B3DF5}
+</style>
+</head>
+<body>
+
+<div data-root="home" style="position:relative;overflow-x:clip">
+
+  <div data-progress="1" style="position:fixed;top:0;left:0;height:2px;width:0%;background:#5B3DF5;z-index:60"></div>
+
+  <div data-trail2="1" style="position:fixed;top:0;left:0;pointer-events:none;z-index:54;opacity:0;transition:opacity .4s ease">
+    <div style="display:flex;align-items:center;gap:6px;transform:translate(6px,6px)">
+      <div style="width:0;height:0;border-left:6px solid #E86A9A;border-bottom:10px solid transparent;border-right:4px solid transparent;transform:rotate(-12deg)"></div>
+      <div style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.06em; color: #FAF9F6; padding: 3px 7px; border-radius: 4px; white-space: nowrap; background-color: #E86A9A">Fatemeh</div>
+    </div>
+  </div>
+
+  <div data-trail="1" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 55; opacity: 0; transition: opacity .4s ease">
+    <div style="display:flex;align-items:center;gap:6px;transform:translate(6px,6px)">
+      <div style="width:0;height:0;border-left:7px solid #5B3DF5;border-bottom:11px solid transparent;border-right:5px solid transparent;transform:rotate(-12deg)"></div>
+      <div style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.06em; color: #FAF9F6; padding: 3px 7px; border-radius: 4px; white-space: nowrap; background-color: #5B3DF5">you</div>
+    </div>
+  </div>
+
+  <!-- ================= NAV ================= -->
+  <div style="position:sticky;top:0;z-index:50;background:rgba(250,249,246,0.82);backdrop-filter:blur(10px);border-bottom:1px solid #E4DFD5">
+    <div style="max-width:1360px;margin:0 auto;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between">
+      <a href="#top" style="display:flex;align-items:center;gap:11px">
+        <div style="width:24px;height:24px;border-radius:7px;background:#5B3DF5"></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#5F5B54">fatemeh.jam</div>
+      </a>
+      <div style="display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#story">Story</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact" style="background:#1A1917;color:#FAF9F6;padding:8px 17px;border-radius:999px">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section id="top" data-screen-label="Hero" style="position:relative;padding:96px 40px 84px;background-image:radial-gradient(#D9D3C7 1.15px,transparent 1.15px);background-size:26px 26px">
+    <div data-cols="hero" style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1.25fr 0.75fr;gap:56px;align-items:start">
+      <div>
+        <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#8A857C;margin-bottom:48px">UI/UX &amp; Product Designer</div>
+        <div data-reveal="1" data-reveal-delay="80" style="position: relative; display: inline-block; padding: 16px 20px; margin: -16px -20px; border: 1.5px dashed #5B3DF5; border-radius: 5px; margin-top: -33px; margin-bottom: -36px; margin-left: 0px; margin-right: 0px">
+          <h1 style="margin: 0; font-family: 'Archivo Black', sans-serif; font-size: clamp(52px,7.2vw,104px); line-height: 0.96; font-weight: 400; letter-spacing: -0.045em">Fatemeh<br>Behboodian</h1>
+          <div style="position:absolute;top:-6px;left:-6px;width:11px;height:11px;background:#FAF9F6;border:2px solid #5B3DF5;border-radius:2px"></div>
+          <div style="position:absolute;top:-6px;right:-6px;width:11px;height:11px;background:#FAF9F6;border:2px solid #5B3DF5;border-radius:2px"></div>
+          <div style="position:absolute;bottom:-6px;left:-6px;width:11px;height:11px;background:#FAF9F6;border:2px solid #5B3DF5;border-radius:2px"></div>
+          <div style="position:absolute;bottom:-6px;right:-6px;width:11px;height:11px;background:#FAF9F6;border:2px solid #5B3DF5;border-radius:2px"></div>
+        </div>
+        <p data-reveal="1" data-reveal-delay="160" style="margin:64px 0 0;font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:#4A463F;max-width:520px;text-wrap:pretty">I turn tangled, multi-role products into interfaces people can read at a glance. 400+ pages shipped in a year.</p>
+        <div data-reveal="1" data-reveal-delay="240" style="display:flex;gap:12px;margin-top:36px;flex-wrap:wrap">
+          <a href="#work" style="background:#1A1917;color:#FAF9F6;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:500">See the work</a>
+          <a href="#resume" style="border:1.5px solid #CFC9BD;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:500">Download resume</a>
+          <div data-anno="1" style="display:flex;align-items:center;gap:4px;transform:translateY(-6px)">
+            <svg width="44" height="26" viewBox="0 0 44 26" fill="none" style="overflow:visible;transform:scaleX(-1) rotate(-8deg)"><path d="M3 5C15 3 33 7 40 19" stroke="#E86A9A" stroke-width="1.6" stroke-linecap="round"></path><path d="M40 19l-7-2" stroke="#E86A9A" stroke-width="1.6" stroke-linecap="round"></path><path d="M40 19l-1-7" stroke="#E86A9A" stroke-width="1.6" stroke-linecap="round"></path></svg>
+            <span style="font-family:'Caveat',cursive;font-size:23px;line-height:1;color:#E86A9A;transform:rotate(-4deg)">start here</span>
+          </div>
+        </div>
+        <div data-reveal="1" data-reveal-delay="320" style="display:flex;gap:30px;flex-wrap:wrap;margin-top:56px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A857C">
+          <div style="display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#5B3DF5;animation:blink 2.4s ease-in-out infinite"></span>OPEN TO WORK</div>
+          <div>TEHRAN, IR</div>
+          <a href="mailto:Fatemeh.behboodian99@gmail.com" style="color:#8A857C">EMAIL</a>
+          <a href="#contact" style="color:#8A857C">LINKEDIN</a>
+          <a href="#contact" style="color:#8A857C">DRIBBBLE</a>
+          <a href="#contact" style="color:#8A857C">FIGMA</a>
+        </div>
+      </div>
+
+      <div style="position:relative;padding-top:12px">
+        <div data-reveal="1" data-reveal-delay="120" style="position:relative">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C;margin-bottom:8px">portrait.png</div>
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 26px 50px -26px rgba(26,25,23,0.3);background:#EDEAE3;aspect-ratio:4/5">
+            <img src="images/fatemeh-hero.jpg" alt="Fatemeh Behboodian" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06)">
+          </div>
+          <div data-anno="1" style="display:flex;align-items:center;gap:9px;margin-top:9px">
+            <div style="flex:1;height:1px;background:#B9B3A7;position:relative">
+              <span style="position:absolute;left:0;top:-4px;width:1px;height:9px;background:#B9B3A7"></span>
+              <span style="position:absolute;right:0;top:-4px;width:1px;height:9px;background:#B9B3A7"></span>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#8A857C">1080 × 1350 · radius 14</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TICKER ================= -->
+  <div style="border-top:1px solid #E4DFD5;border-bottom:1px solid #E4DFD5;background:#1A1917;overflow:hidden;padding:15px 0">
+    <div data-ticker="1" style="display:flex;width:max-content;animation:ticker 34s linear infinite;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;color:#FAF9F6">
+      <div style="display:flex;gap:34px;padding-right:34px">
+        <span>DESIGN SYSTEMS</span><span style="color:#E86A9A">•</span><span>USER RESEARCH</span><span style="color:#E86A9A">•</span><span>INFORMATION ARCHITECTURE</span><span style="color:#E86A9A">•</span><span>WIREFRAMING &amp; PROTOTYPING</span><span style="color:#E86A9A">•</span><span>RESPONSIVE &amp; MOBILE-FIRST</span><span style="color:#E86A9A">•</span><span>INTERACTION DESIGN</span><span style="color:#E86A9A">•</span><span>FIGMA DEV MODE HANDOFF</span><span style="color:#E86A9A">•</span>
+      </div>
+      <div style="display:flex;gap:34px;padding-right:34px" aria-hidden="true">
+        <span>DESIGN SYSTEMS</span><span style="color:#E86A9A">•</span><span>USER RESEARCH</span><span style="color:#E86A9A">•</span><span>INFORMATION ARCHITECTURE</span><span style="color:#E86A9A">•</span><span>WIREFRAMING &amp; PROTOTYPING</span><span style="color:#E86A9A">•</span><span>RESPONSIVE &amp; MOBILE-FIRST</span><span style="color:#E86A9A">•</span><span>INTERACTION DESIGN</span><span style="color:#E86A9A">•</span><span>FIGMA DEV MODE HANDOFF</span><span style="color:#E86A9A">•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WORK (pinned horizontal) ================= -->
+  <section id="work" data-screen-label="Selected work" data-pin="1" style="position:relative;height:300vh">
+    <div style="position:sticky;top:66px;height:calc(100vh - 66px);min-height:430px;overflow:hidden;display:flex;flex-direction:column;justify-content:center">
+      <div style="max-width:1360px;width:100%;margin:0 auto;padding:0 40px 24px;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap">
+        <h2 style="margin: 0; font-family: 'Archivo Black', sans-serif; font-size: clamp(26px,3vw,42px); font-weight: 400; letter-spacing: -0.03em">Selected frames</h2>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A857C">05 PROJECTS · SCROLL →</div>
+      </div>
+      <div data-rail="1" style="overflow-x:auto;overflow-y:hidden;scrollbar-width:none"><div data-track="1" style="display:flex;gap:26px;padding:0 40px;width:max-content">
+        <a href="vamax.html" style="width:clamp(340px,52vw,760px);flex:none;display:block">
+          <div data-anno="1" style="display:flex;align-items:center;gap:7px;margin-bottom:7px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#5B3DF5"><span style="width:9px;height:9px;border-radius:2px;background:#5B3DF5"></span>vamax / dashboard</div>
+          <div style="height:clamp(150px,34vh,318px);border-radius:14px;border:1px solid #DCD5F2;background:#F6F4FE;position:relative;overflow:hidden">
+            <img src="assets/vamax-dashboard.png" alt="Vamax dashboard" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
+            <div style="position:absolute;bottom:18px;left:20px;background:#5B3DF5;color:#FAF9F6;font-size:12px;font-weight:500;padding:6px 13px;border-radius:999px">Full case study →</div>
+          </div>
+          <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:24px;font-weight:400;letter-spacing:-0.01em">Vamax</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">FINTECH · 2026</div>
+          </div>
+          <div style="font-size:15px;color:#6E6A63;margin-top:5px;max-width:440px">Loan and installment dashboard. Two credit cards, one calculator, zero guesswork.</div>
+          <div data-anno="1" style="display:flex;align-items:center;gap:6px;margin-top:8px">
+            <span style="font-family:'Caveat',cursive;font-size:22px;color:#5B3DF5;transform:rotate(-2deg)">read this one if you only read one</span>
+            <svg width="30" height="14" viewBox="0 0 30 14" fill="none" style="overflow:visible"><path d="M1 7h25" stroke="#5B3DF5" stroke-width="1.6" stroke-linecap="round"></path><path d="M21 2l5 5-5 5" stroke="#5B3DF5" stroke-width="1.6" stroke-linecap="round"></path></svg>
+          </div>
+        </a>
+
+        <a href="divaran.html" style="width:clamp(340px,48vw,720px);flex:none;display:block">
+          <div data-anno="1" style="display:flex;align-items:center;gap:7px;margin-bottom:7px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#1E63D9"><span style="width:9px;height:9px;border-radius:2px;background:#1E63D9"></span>divaran / marketplace</div>
+          <div style="height:clamp(140px,30vh,282px);border-radius:14px;border:1px solid #CADCF5;background:#F2F6FD;position:relative;overflow:hidden">
+            <img src="assets/divaran-landing-desktop.png" alt="Divaran marketplace" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
+            <div style="position:absolute;bottom:18px;left:20px;border:1px solid #CFC9BD;font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 10px;border-radius:999px;color:#5F5B54;background:#FAF9F6">IN DEVELOPMENT</div>
+          </div>
+          <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:24px;font-weight:400;letter-spacing:-0.01em">Divaran</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">MARKETPLACE</div>
+          </div>
+          <div style="font-size:15px;color:#6E6A63;margin-top:5px;max-width:440px">Classifieds marketplace: landing, listing detail and buyer-seller chat, desktop-first and taken down to mobile.</div>
+        </a>
+
+        <a href="agrobazar.html" style="width:clamp(340px,48vw,720px);flex:none;display:block">
+          <div data-anno="1" style="display:flex;align-items:center;gap:7px;margin-bottom:7px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#1E7A4B"><span style="width:9px;height:9px;border-radius:2px;background:#1E7A4B"></span>agrobazar / marketplace</div>
+          <div style="height:clamp(140px,30vh,282px);border-radius:14px;border:1px solid #CFE6D8;background:#F3FAF5;position:relative;overflow:hidden">
+            <img src="assets/agro-cart-desktop.jpg" alt="Agrobazar marketplace" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
+            <div style="position:absolute;bottom:18px;left:20px;border:1px solid #CFC9BD;font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 10px;border-radius:999px;color:#5F5B54;background:#FAF9F6">IN DEVELOPMENT</div>
+          </div>
+          <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:24px;font-weight:400;letter-spacing:-0.01em">Agrobazar</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">MARKETPLACE</div>
+          </div>
+          <div style="font-size:15px;color:#6E6A63;margin-top:5px;max-width:440px">Listings, sellers and checkout, designed desktop-first and taken down to mobile.</div>
+        </a>
+
+        <a href="karanex.html" style="width:clamp(340px,48vw,720px);flex:none;display:block">
+          <div data-anno="1" style="display:flex;align-items:center;gap:7px;margin-bottom:7px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#B8860B"><span style="width:9px;height:9px;border-radius:2px;background:#B8860B"></span>karanex / crypto trading</div>
+          <div style="height:clamp(140px,30vh,282px);border-radius:14px;border:1px solid #2A2118;background:#14231B;position:relative;overflow:hidden">
+            <img src="assets/karanex-spot-desktop.png" alt="Karanex crypto trading" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
+            <div style="position:absolute;bottom:18px;left:20px;background:#B8860B;color:#14231B;font-size:12px;font-weight:500;padding:6px 13px;border-radius:999px">Full case study →</div>
+          </div>
+          <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:24px;font-weight:400;letter-spacing:-0.01em">Karanex</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">CRYPTO / FINTECH</div>
+          </div>
+          <div style="font-size:15px;color:#6E6A63;margin-top:5px;max-width:440px">Trading, dashboards, courses and wallet pages for a crypto exchange with two kinds of user.</div>
+        </a>
+
+        <a href="taxi-shahr.html" style="width:clamp(340px,48vw,720px);flex:none;display:block">
+          <div data-anno="1" style="display:flex;align-items:center;gap:7px;margin-bottom:7px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#C99A00"><span style="width:9px;height:9px;border-radius:2px;background:#C99A00"></span>taxi shahr / ride-hailing</div>
+          <div style="height:clamp(140px,30vh,282px);border-radius:14px;border:1px solid #E9DFC4;background:#FFF7E3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
+            <img src="assets/taxishahr-select-service.png" alt="Taxi Shahr ride selection" style="height:100%;width:auto;display:block">
+            <div style="position:absolute;bottom:18px;left:20px;border:1px solid #E0C77A;font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 10px;border-radius:999px;color:#8A6D00;background:#FFF7E3">IN DEVELOPMENT</div>
+          </div>
+          <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:24px;font-weight:400;letter-spacing:-0.01em">Taxi Shahr</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">RIDE-HAILING</div>
+          </div>
+          <div style="font-size:15px;color:#6E6A63;margin-top:5px;max-width:440px">Bilingual passenger and driver apps: booking, live tracking, payments and trip history in English (LTR).</div>
+        </a>
+
+        <div style="width:clamp(180px,14vw,240px);flex:none;display:flex;align-items:center;justify-content:center;height:clamp(140px,28vh,264px);border:1.5px dashed #CFC9BD;border-radius:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#A39D92;text-align:center;line-height:1.7">MORE IN THE<br>RESUME ↓</div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE (pinned timeline) ================= -->
+  <section id="experience" data-screen-label="Experience" style="padding: 96px 0 104px; overflow: hidden; padding-top: 20px; background-image:linear-gradient(rgba(26,25,23,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,25,23,0.055) 1px,transparent 1px); background-size:26px 26px; border-bottom:1px solid #E4DFD5">
+    <div style="max-width:1360px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap">
+      <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#8A857C">EXPERIENCE — ON THE WIRE</div>
+      <div data-anno="1" style="font-family:'Caveat',cursive;font-size:22px;color:#5B3DF5;transform:rotate(-2deg)">left to right, oldest first</div>
+    </div>
+
+    <div style="position:relative;margin-top:72px">
+      <div data-wire-row="1" style="position:relative;max-width:1360px;margin:0 auto;display:flex;flex-wrap:nowrap;gap:22px;align-items:flex-start;padding:0 40px 20px">
+        <svg data-wire-line="1" viewBox="0 0 1000 220" preserveAspectRatio="none" style="position:absolute;top:0;left:40px;right:40px;width:calc(100% - 80px);height:220px;overflow:visible;pointer-events:none;z-index:0">
+          <path d="M-60,26 C20,16 60,30 100,30 C200,30 190,110 300,110 C410,110 400,42 500,42 C600,42 596,124 700,124 C800,124 812,150 900,150 C980,150 1010,168 1060,176" fill="none" stroke="#4A443B" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+        </svg>
+        <div data-reveal="1" style="position:relative;flex:1 1 0;min-width:0;min-height:250px;margin-top:10px;background:linear-gradient(160deg,#FFF6C4,#FBE79A);padding:44px 18px 26px;box-shadow:2px 3px 2px rgba(26,25,23,0.06),6px 16px 26px -16px rgba(26,25,23,0.45);transform:rotate(-1.4deg)">
+          <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#6E675C,#2B2620);box-shadow:0 3px 4px rgba(0,0,0,0.35)"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">— 2025</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:19px;font-weight:400;margin-top:8px;line-height:1.15">Freelance</div>
+          <div style="font-size:13.5px;color:#5C574F;margin-top:8px;line-height:1.5">Student marketplace, home-loan allocation, café menu</div>
+          <div style="font-family:'Caveat',cursive;font-size:20px;color:#5B3DF5;margin-top:14px">Found the first users</div>
+        </div>
+        <div data-reveal="1" data-reveal-delay="80" style="position: relative; flex: 1 1 0; min-width: 0; min-height: 250px; margin-top: 90px; background: linear-gradient(160deg, #FFF6C4, #FBE79A); padding: 44px 18px 26px; box-shadow: -2px 3px 2px rgba(26,25,23,0.06),6px 16px 26px -16px rgba(26,25,23,0.45); transform: rotate(1.2deg)">
+          <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#6E675C,#2B2620);box-shadow:0 3px 4px rgba(0,0,0,0.35)"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">2025</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:19px;font-weight:400;margin-top:8px;line-height:1.15">UI/UX Intern · Iracode</div>
+          <div style="font-size:13.5px;color:#5C574F;margin-top:8px;line-height:1.5">Landing page and 10+ sub-pages for a dental provider</div>
+          <div style="font-family:'Caveat',cursive;font-size:20px;color:#5B3DF5;margin-top:14px">Found the grid</div>
+        </div>
+        <div data-reveal="1" data-reveal-delay="160" style="position:relative;flex:1 1 0;min-width:0;min-height:250px;margin-top:22px;background:linear-gradient(160deg,#FFF6C4,#FBE79A);padding:44px 18px 26px;box-shadow:2px 3px 2px rgba(26,25,23,0.06),6px 16px 26px -16px rgba(26,25,23,0.45);transform:rotate(-0.7deg)">
+          <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#6E675C,#2B2620);box-shadow:0 3px 4px rgba(0,0,0,0.35)"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">2025</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:19px;font-weight:400;margin-top:8px;line-height:1.15">Designer · Rabocode</div>
+          <div style="font-size:13.5px;color:#5C574F;margin-top:8px;line-height:1.5">Municipal website, talent-platform redesign, project timelines</div>
+          <div style="font-family:'Caveat',cursive;font-size:20px;color:#5B3DF5;margin-top:14px">Found the system</div>
+        </div>
+        <div data-reveal="1" data-reveal-delay="240" style="position:relative;flex:1 1 0;min-width:0;min-height:250px;margin-top:104px;background:linear-gradient(160deg,#FFF6C4,#FBE79A);padding:44px 18px 26px;box-shadow:-2px 3px 2px rgba(26,25,23,0.06),6px 16px 26px -16px rgba(26,25,23,0.45);transform:rotate(1.7deg)">
+          <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#6E675C,#2B2620);box-shadow:0 3px 4px rgba(0,0,0,0.35)"></div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">2026 — NOW</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:19px;font-weight:400;margin-top:8px;line-height:1.15">Product Designer · Vista App</div>
+          <div style="font-size:13.5px;color:#5C574F;margin-top:8px;line-height:1.5">Exchange, taxi booking, classified ads, B2B marketplace</div>
+          <div style="font-family:'Caveat',cursive;font-size:20px;color:#5B3DF5;margin-top:14px">Still learning</div>
+        </div>
+        <div data-reveal="1" data-reveal-delay="320" style="flex:1 1 0;min-width:0;margin-top:150px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Caveat',cursive;font-size:24px;color:#4A463F;transform:rotate(-2deg)">next note goes here</div>
+          <a href="#contact" style="align-self:flex-start;background:#1A1917;color:#FAF9F6;padding:12px 22px;border-radius:999px;font-size:14px;font-weight:500">Let's talk ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STORY ================= -->
+  <section id="story" data-screen-label="Story" style="padding:110px 40px 100px;background-image:radial-gradient(#D9D3C7 1.15px,transparent 1.15px);background-size:26px 26px">
+    <div style="max-width:1360px;margin:0 auto">
+      <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#5B3DF5;margin-bottom:18px">THE STORY — 03 CHAPTERS</div>
+      <div data-cols="story" style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px">
+        <div data-reveal="1" data-reveal-delay="80">
+          <div data-stick="1" style="position:sticky;top:120px">
+          <div style="border-radius:14px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 26px 50px -28px rgba(26,25,23,0.28);background:#EDEAE3;aspect-ratio:1/1">
+            <img src="images/fatemeh-story.jpg" alt="Fatemeh Behboodian" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)">
+          </div>
+          <div style="margin-top: 22px; width: 200px; padding: 18px; background: linear-gradient(160deg, #FFF6C4, #FBE79A); border-radius: 3px; box-shadow: 0 14px 26px -14px rgba(26,25,23,0.3); animation: bobC 9s ease-in-out infinite">
+            <div style="font-size: 14px; line-height: 1.45; color: #000000">Composition is composition, whether it is paint or a payment flow.</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:70px">
+          <div data-reveal="1">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#8A857C;margin-bottom:16px">CHAPTER 01 — WHERE I STARTED</div>
+            <h3 style="margin: 0; font-family: 'Archivo Black', sans-serif; font-size: clamp(32px,3.6vw,50px); line-height: 1.02; font-weight: 400; letter-spacing: -0.035em">I spent four years painting Persian miniatures.</h3>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.7;color:#4A463F;max-width:520px;text-wrap:pretty">A BA in Islamic art teaches you to hold a whole composition in your head and to fix one millimetre at a time. It turns out both habits are the job.</p>
+            <div data-anno="1" style="display:flex;align-items:flex-start;gap:8px;margin-top:16px">
+              <svg width="26" height="30" viewBox="0 0 26 30" fill="none" style="overflow:visible;margin-top:4px"><path d="M4 2C4 14 10 22 22 26" stroke="#5B3DF5" stroke-width="1.6" stroke-linecap="round"></path><path d="M22 26l-7 1" stroke="#5B3DF5" stroke-width="1.6" stroke-linecap="round"></path><path d="M22 26l-4-6" stroke="#5B3DF5" stroke-width="1.6" stroke-linecap="round"></path></svg>
+              <span style="font-family:'Caveat',cursive;font-size:23px;line-height:1.15;color:#5B3DF5;max-width:280px;transform:rotate(-2deg)">yes, this is why I love spacing tokens</span>
+            </div>
+          </div>
+          <div data-reveal="1">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#8A857C;margin-bottom:16px">CHAPTER 02 — THE SWITCH</div>
+            <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,3.6vw,50px);line-height:1.02;font-weight:400;letter-spacing:-0.035em">Then I wanted the picture to work for someone else.</h3>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.7;color:#4A463F;max-width:520px;text-wrap:pretty">I started with landing pages, moved to a municipal website, then a platform for children finding their talents. Each one taught me that clarity beats decoration.</p>
+          </div>
+          <div data-reveal="1">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#8A857C;margin-bottom:16px">CHAPTER 03 — NOW</div>
+            <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,3.6vw,50px);line-height:1.02;font-weight:400;letter-spacing:-0.035em">Multi-role platforms, before anyone has seen them.</h3>
+            <p style="margin:22px 0 0;font-size:17px;line-height:1.7;color:#4A463F;max-width:520px;text-wrap:pretty">At Vista App I design exchanges, marketplaces and booking flows that have three kinds of user and no launch date yet. Design systems are how I keep them coherent.</p>
+            <div style="display:flex;gap:10px;margin-top:26px;flex-wrap:wrap">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 13px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">RESEARCH → FLOWS</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 13px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">SYSTEM FIRST</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 13px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">SHIP, THEN REFINE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESUME ================= -->
+  <section id="resume" data-screen-label="Resume" style="padding:96px 40px;border-top:1px solid #E4DFD5;background-image:linear-gradient(rgba(26,25,23,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,25,23,0.055) 1px,transparent 1px);background-size:26px 26px">
+    <div data-cols="resume" style="max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:64px;align-items:start">
+
+      <div style="display:flex;flex-direction:column;gap:40px">
+        <div data-reveal="1" data-reveal-delay="80" style="position:relative;outline:1.5px solid #E86A9A;padding:14px;margin-top:30px;background:#FAF9F6">
+          <div style="position:absolute;top:-19px;left:0;display:inline-flex;align-items:center;gap:6px;background:#E86A9A;color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;line-height:1;padding:5px 8px">
+            <span style="width:8px;height:8px;border:1.5px solid rgba(255,255,255,0.85);border-radius:2px;display:block"></span>Tools &amp; skills<span style="opacity:0.8">→</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;column-gap:8px;row-gap:8px">
+            <div style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1.5px solid #5B3DF5;outline-offset:-1px;color:#3A2FA8">Figma<span style="position:absolute;top:-8px;right:-9px;background:#5B3DF5;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1;padding:3px 4px;border-radius:2px">72</span></div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">Adobe XD</div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">Design systems</div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">Auto layout</div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">User research</div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">Usability testing</div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">IA &amp; user flows</div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">Prototyping</div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">Mobile-first</div>
+            <div class="skill-chip" style="position:relative;font-size:14px;padding:9px 14px;background:#FAF9F6;outline:1px solid #DDD8CD;outline-offset:-1px">Dev Mode handoff</div>
+          </div>
+        </div>
+
+        <div data-reveal="1" data-reveal-delay="160" style="position:relative;outline:1.5px solid #5B3DF5;padding:14px;margin-top:16px;background:#FAF9F6">
+          <div style="position:absolute;top:-19px;left:0;display:inline-flex;align-items:center;gap:6px;background:#5B3DF5;color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;line-height:1;padding:5px 8px">
+            <span style="width:8px;height:8px;border:1.5px solid rgba(255,255,255,0.85);border-radius:2px;display:block"></span>Education &amp; training<span style="opacity:0.8">→</span>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="position:relative;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline;padding:11px 12px;outline:1px solid rgba(91,61,245,0.3);outline-offset:-1px">
+              <div style="font-size:16px">BA, Islamic Art — Persian Miniature Painting</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">2018—22</div>
+              <span style="position:absolute;top:-8px;right:-9px;background:#5B3DF5;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1;padding:3px 4px;border-radius:2px">28</span>
+            </div>
+          <div style="position:relative;height:12px;background:rgba(91,61,245,0.14);display:flex;align-items:center;justify-content:flex-end">
+            <span style="background:#E86A9A;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1;padding:3px 5px;margin-right:8px;white-space:nowrap">spacing-s &nbsp;|&nbsp; 12px</span>
+          </div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline;padding:11px 12px;outline:1px solid rgba(91,61,245,0.3);outline-offset:-1px">
+              <div style="font-size:16px">UI Core — Theehsanez Academy</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">48 HRS · 2026</div>
+            </div>
+          <div style="position:relative;height:12px;background:rgba(91,61,245,0.14);display:flex;align-items:center;justify-content:flex-end">
+            <span style="background:#E86A9A;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1;padding:3px 5px;margin-right:8px;white-space:nowrap">spacing-s &nbsp;|&nbsp; 12px</span>
+          </div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline;padding:11px 12px;outline:1px solid rgba(91,61,245,0.3);outline-offset:-1px">
+              <div style="font-size:16px">UI/UX with Figma, 5+ real projects — Udemy</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">2024</div>
+            </div>
+          <div style="position:relative;height:12px;background:rgba(91,61,245,0.14);display:flex;align-items:center;justify-content:flex-end">
+            <span style="background:#E86A9A;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1;padding:3px 5px;margin-right:8px;white-space:nowrap">spacing-s &nbsp;|&nbsp; 12px</span>
+          </div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline;padding:11px 12px;outline:1px solid rgba(91,61,245,0.3);outline-offset:-1px">
+              <div style="font-size:16px">Mobile app design in Figma — Udemy</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">2024</div>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal="1" data-reveal-delay="240" style="position:relative;outline:1.5px solid #5B3DF5;padding:14px;margin-top:16px;background:#EFECE4">
+          <div style="position:absolute;top:-19px;left:0;display:inline-flex;align-items:center;gap:6px;background:#5B3DF5;color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;line-height:1;padding:5px 8px">
+            <span style="width:8px;height:8px;border:1.5px solid rgba(255,255,255,0.85);border-radius:2px;display:block"></span>Languages<span style="opacity:0.8">→</span>
+          </div>
+          <div style="position:relative;font-size:15px;color:#4A463F;line-height:1.6;padding:12px;outline:1px solid rgba(91,61,245,0.3);outline-offset:-1px;background:#FAF9F6">Persian, native. English, upper-intermediate reading and listening; intermediate writing and speaking.<span style="position:absolute;top:-8px;right:-9px;background:#5B3DF5;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1;padding:3px 4px;border-radius:2px">64</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" data-screen-label="Contact" style="padding:96px 40px 40px;background:#1A1917;color:#FAF9F6">
+    <div data-cols="contact" style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+      <div>
+        <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#E86A9A;margin-bottom:20px">SAY HELLO</div>
+        <h2 data-reveal="1" data-reveal-delay="80" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(38px,4.6vw,68px);line-height:0.98;font-weight:400;letter-spacing:-0.04em">Got a product<br>that needs order?</h2>
+        <p data-reveal="1" data-reveal-delay="160" style="margin:26px 0 0;font-size:18px;line-height:1.65;color:rgba(250,249,246,0.66);max-width:420px;text-wrap:pretty">Full-time roles, contracts, or a second pair of eyes on a flow. I answer everything.</p>
+        <div data-reveal="1" data-reveal-delay="240" style="margin-top:34px;display:flex;flex-direction:column;gap:12px;font-family:'JetBrains Mono',monospace;font-size:13px">
+          <a href="mailto:Fatemeh.behboodian99@gmail.com" style="color:#FAF9F6;border-bottom:1px solid rgba(250,249,246,0.24);padding-bottom:5px;width:fit-content">Fatemeh.behboodian99@gmail.com</a>
+          <div data-anno="1" style="display:flex;align-items:center;gap:7px;margin-top:2px">
+            <svg width="34" height="20" viewBox="0 0 34 20" fill="none" style="overflow:visible;transform:rotate(-160deg)"><path d="M2 4C12 2 26 6 31 16" stroke="#E86A9A" stroke-width="1.6" stroke-linecap="round"></path><path d="M31 16l-7-2" stroke="#E86A9A" stroke-width="1.6" stroke-linecap="round"></path><path d="M31 16l-1-7" stroke="#E86A9A" stroke-width="1.6" stroke-linecap="round"></path></svg>
+            <span style="font-family:'Caveat',cursive;font-size:23px;color:#E86A9A;transform:rotate(-3deg)">usually within a day</span>
+          </div>
+          <div style="display:flex;gap:20px;color:rgba(250,249,246,0.6);margin-top:8px">
+            <a href="#contact" style="color:rgba(250,249,246,0.6)">LINKEDIN</a>
+            <a href="#contact" style="color:rgba(250,249,246,0.6)">DRIBBBLE</a>
+            <a href="#contact" style="color:rgba(250,249,246,0.6)">FIGMA</a>
+          </div>
+        </div>
+      </div>
+
+      <form data-contact-form="1" data-reveal="1" data-reveal-delay="120" style="display:flex;flex-direction:column;gap:18px;padding:32px;border-radius:16px;background:rgba(250,249,246,0.05);border:1px solid rgba(250,249,246,0.14)">
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:rgba(250,249,246,0.56)">NAME</span>
+          <input class="field-input" type="text" name="name" placeholder="Your name" required style="background:transparent;border:none;border-bottom:1px solid rgba(250,249,246,0.24);padding:10px 2px;font-size:16px;outline:none">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:rgba(250,249,246,0.56)">EMAIL</span>
+          <input class="field-input" type="email" name="email" placeholder="you@company.com" required style="background:transparent;border:none;border-bottom:1px solid rgba(250,249,246,0.24);padding:10px 2px;font-size:16px;outline:none">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:rgba(250,249,246,0.56)">MESSAGE</span>
+          <textarea class="field-input" name="message" rows="4" placeholder="What are you building?" required style="background:transparent;border:none;border-bottom:1px solid rgba(250,249,246,0.24);padding:10px 2px;font-size:16px;outline:none;resize:vertical"></textarea>
+        </label>
+        <button type="submit" class="btn-send" style="margin-top: 6px; color: #1A1917; border: none; padding: 15px 26px; border-radius: 999px; font-size: 15px; font-weight: 600; cursor: pointer; background-color: #E86A9A"><span data-submit-label>Send message</span></button>
+      </form>
+    </div>
+
+    <div style="max-width:1360px;margin:80px auto 0;padding-top:26px;border-top:1px solid rgba(250,249,246,0.14);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(250,249,246,0.44)">
+      <div>FATEMEH BEHBOODIAN · UI/UX &amp; PRODUCT DESIGNER</div>
+      <div>DESIGNED IN FIGMA, BUILT AS A CANVAS</div>
+      <a href="#top" style="color:rgba(250,249,246,0.44)">BACK TO TOP ↑</a>
+    </div>
+  </section>
+</div>
+
+<script src="js/site.js"></script>
+</body>
+</html>
