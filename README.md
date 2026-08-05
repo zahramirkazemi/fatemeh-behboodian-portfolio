@@ -1,25 +1,39 @@
-# CODING AGENTS: READ THIS FIRST
+# fatemeh.jam — UI/UX & Product Designer Portfolio
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+A one-page portfolio for Fatemeh Behboodian, UI/UX & product designer, with five linked case studies. Static HTML/CSS/JS, no build step, deployed to GitHub Pages.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Structure
 
-## What you should do — IMPORTANT
+```
+index.html          Home — hero, work rail, experience timeline, story, resume, contact
+vamax.html           Case study: Vamax, fintech loan management dashboard
+divaran.html         Case study: Divaran, classifieds marketplace
+agrobazar.html        Case study: Agroobazar, marketplace seller dashboard
+karanex.html         Case study: Karanex, crypto trading & learning platform
+taxi-shahr.html      Case study: Taxi Shahr, bilingual ride-hailing app
 
-**Read the chat transcripts first.** There are 6 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+css/site.css         Shared base styles, keyframes, responsive rules
+js/site.js           Reveal-on-scroll, scroll progress bar, home page
+                      cursor trails and contact form behavior
 
-**Read `project/Home.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+assets/              Case study screenshots
+images/              Portrait photos used on the home page
+```
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Local preview
 
-## About the design files
+No build step — serve the directory with any static file server, e.g.:
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+```
+python3 -m http.server 8000
+```
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+then open `http://localhost:8000`.
 
-## Bundle contents
+## Deployment
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Portfolio website design direction` project files (HTML prototypes, assets, components)
+Pushing to `main` runs `.github/workflows/deploy.yml`, which publishes the repository root to GitHub Pages. In the repo's **Settings → Pages**, set the source to **GitHub Actions** once to enable this.
+
+## Credit
+
+Originally designed and prototyped in Claude Design, then rebuilt here as a dependency-free static site for production hosting.
