@@ -1,0 +1,25 @@
+/* Shared base styles for fatemeh.jam portfolio site */
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FAF9F6;color:#1A1917;font-family:'Instrument Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1A1917;text-decoration:none}
+a:hover{color:var(--hover,#5B3DF5)}
+input,textarea,button{font-family:inherit;font-size:inherit;color:inherit}
+::selection{background:var(--selection,#E86A9A);color:#1A1917}
+
+@keyframes bobA{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-9px)}}
+@keyframes bobB{0%,100%{transform:rotate(2.5deg) translateY(0)}50%{transform:rotate(2.5deg) translateY(-7px)}}
+@keyframes bobC{0%,100%{transform:rotate(-1.5deg) translateY(0)}50%{transform:rotate(-1.5deg) translateY(-6px)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes blink{0%,45%{opacity:1}55%,100%{opacity:0.25}}
+
+/* Case-study responsive layout: pairs of desktop/mobile screenshots, two-up columns */
+@media (max-width:1000px){
+  [data-cols]{grid-template-columns:1fr !important;gap:36px !important}
+  [data-flip] > div:first-child{order:2}
+  [data-pair]{grid-template-columns:1fr !important}
+}
+@media (max-width:640px){
+  section{padding-left:20px !important;padding-right:20px !important}
+}
