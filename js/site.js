@@ -87,6 +87,13 @@
       y1 = -100,
       on = false;
 
+    // Hide the OS cursor so the purple "you" pointer is the real cursor.
+    document.documentElement.style.cursor = 'none';
+    var style = document.createElement('style');
+    style.textContent =
+      '[data-root="home"], [data-root="home"] * { cursor: none !important; }';
+    document.head.appendChild(style);
+
     window.addEventListener(
       'pointermove',
       function (e) {
@@ -118,8 +125,9 @@
     }
 
     (function loop() {
-      x1 += (tx - x1) * 0.22;
-      y1 += (ty - y1) * 0.22;
+      // Snap tightly to the pointer so it feels like the real cursor.
+      x1 += (tx - x1) * 0.65;
+      y1 += (ty - y1) * 0.65;
       var dx = gx - x2,
         dy = gy - y2;
       if (Math.hypot(dx, dy) < 6) {
@@ -134,14 +142,78 @@
     })();
   }
 
+  /* ---------- mobile nav ---------- */
+  var nav = root.querySelector('[data-nav]');
+  var navToggle = root.querySelector('[data-nav-toggle]');
+  var navPanel = root.querySelector('[data-nav-panel]');
+  var navBackdrop = root.querySelector('[data-nav-backdrop]');
+  if (nav && navToggle && navPanel) {
+    function setNavOpen(open) {
+      nav.classList.toggle('is-open', open);
+      document.body.classList.toggle('nav-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    navToggle.addEventListener('click', function () {
+      setNavOpen(!nav.classList.contains('is-open'));
+    });
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', function () {
+        setNavOpen(false);
+      });
+    }
+    navPanel.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setNavOpen(false);
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setNavOpen(false);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) setNavOpen(false);
+    });
+  }
+
   /* ---------- home page only: contact form ---------- */
   var form = root.querySelector('[data-contact-form]');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var btn = form.querySelector('[data-submit-label]');
-      if (btn) btn.textContent = 'Thanks — I will reply soon';
-      form.reset();
+      var label = form.querySelector('[data-submit-label]');
+      var submitBtn = form.querySelector('[type="submit"]');
+      var data = new FormData(form);
+      var payload = {
+        name: data.get('name'),
+        email: data.get('email'),
+        message: data.get('message'),
+        _subject: 'Portfolio contact from ' + (data.get('name') || 'visitor'),
+        _template: 'table'
+      };
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (label) label.textContent = 'Sending…';
+
+      fetch('https://formsubmit.co/ajax/Fatemeh.behboodian99@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Send failed');
+          return res.json();
+        })
+        .then(function () {
+          if (label) label.textContent = 'Thanks — I will reply soon';
+          form.reset();
+        })
+        .catch(function () {
+          if (label) label.textContent = 'Could not send — try email instead';
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   }
 })();

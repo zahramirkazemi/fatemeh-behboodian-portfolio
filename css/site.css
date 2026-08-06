@@ -1,25 +1,329 @@
 /* Shared base styles for fatemeh.jam portfolio site */
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#FAF9F6;color:#1A1917;font-family:'Instrument Sans',sans-serif;-webkit-font-smoothing:antialiased}
-a{color:#1A1917;text-decoration:none}
-a:hover{color:var(--hover,#5B3DF5)}
-input,textarea,button{font-family:inherit;font-size:inherit;color:inherit}
-::selection{background:var(--selection,#E86A9A);color:#1A1917}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #faf9f6;
+  color: #1a1917;
+  font-family: "Instrument Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #1a1917;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--hover, #5b3df5);
+}
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+::selection {
+  background: var(--selection, #e86a9a);
+  color: #1a1917;
+}
 
-@keyframes bobA{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-9px)}}
-@keyframes bobB{0%,100%{transform:rotate(2.5deg) translateY(0)}50%{transform:rotate(2.5deg) translateY(-7px)}}
-@keyframes bobC{0%,100%{transform:rotate(-1.5deg) translateY(0)}50%{transform:rotate(-1.5deg) translateY(-6px)}}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes blink{0%,45%{opacity:1}55%,100%{opacity:0.25}}
+@keyframes bobA {
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-3deg) translateY(-9px);
+  }
+}
+@keyframes bobB {
+  0%,
+  100% {
+    transform: rotate(2.5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(2.5deg) translateY(-7px);
+  }
+}
+@keyframes bobC {
+  0%,
+  100% {
+    transform: rotate(-1.5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-1.5deg) translateY(-6px);
+  }
+}
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0.25;
+  }
+}
+
+/* ---------- site header / mobile nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 249, 246, 0.92);
+  border-bottom: 1px solid #e4dfd5;
+}
+.site-header__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+}
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+  z-index: 3;
+}
+.site-header__mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: #5b3df5;
+  flex-shrink: 0;
+}
+.site-header__logo {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #5f5b54;
+}
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.site-header__nav-label,
+.site-header__nav a span {
+  display: none;
+}
+.site-header__cta {
+  background: #1a1917;
+  color: #faf9f6 !important;
+  padding: 8px 17px;
+  border-radius: 999px;
+}
+.site-header__cta:hover {
+  color: #faf9f6 !important;
+  background: #5b3df5;
+}
+.site-header__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
+}
+.site-header__toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 0 auto;
+  background: #1a1917;
+  border-radius: 20px;
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.2s ease;
+}
+.site-header__toggle-bar + .site-header__toggle-bar {
+  margin-top: 6px;
+}
+.site-header.is-open .site-header__toggle-bar:first-child {
+  transform: translateY(3.75px) rotate(45deg);
+}
+.site-header.is-open .site-header__toggle-bar:last-child {
+  transform: translateY(-3.75px) rotate(-45deg);
+}
+.site-header__backdrop {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .site-header__inner {
+    padding: 0 20px;
+  }
+  .site-header__toggle {
+    display: block;
+  }
+  .site-header__backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba(26, 25, 23, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .site-header.is-open .site-header__backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .site-header__nav {
+    position: fixed;
+    top: 66px;
+    left: 12px;
+    right: 12px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: min(calc(100dvh - 90px), 560px);
+    padding: 22px 20px 24px;
+    overflow: auto;
+    background: #faf9f6;
+    border: 1.5px dashed #5b3df5;
+    border-radius: 10px;
+    background-image: radial-gradient(#d9d3c7 1px, transparent 1px);
+    background-size: 22px 22px;
+    box-shadow: 0 24px 48px rgba(26, 25, 23, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.98);
+    pointer-events: none;
+    transition:
+      opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0.3s;
+  }
+  .site-header.is-open .site-header__nav {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+  }
+  .site-header__nav-label {
+    display: block;
+    margin-bottom: 18px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8a857c;
+  }
+  .site-header__nav a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 15px 6px;
+    border-bottom: 1px solid #e4dfd5;
+    font-size: clamp(22px, 6vw, 28px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      color 0.15s ease,
+      opacity 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .site-header.is-open .site-header__nav a {
+    opacity: 1;
+    transform: none;
+  }
+  .site-header.is-open .site-header__nav a:nth-child(2) {
+    transition-delay: 0.04s;
+  }
+  .site-header.is-open .site-header__nav a:nth-child(3) {
+    transition-delay: 0.08s;
+  }
+  .site-header.is-open .site-header__nav a:nth-child(4) {
+    transition-delay: 0.12s;
+  }
+  .site-header.is-open .site-header__nav a:nth-child(5) {
+    transition-delay: 0.16s;
+  }
+  .site-header.is-open .site-header__nav a:nth-child(6) {
+    transition-delay: 0.2s;
+  }
+  .site-header__nav a span {
+    display: inline-block;
+    min-width: 1.6em;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #8a857c;
+  }
+  .site-header__nav a:not(.site-header__cta):hover {
+    color: #5b3df5;
+  }
+  .site-header__nav a:not(.site-header__cta):hover span {
+    color: #5b3df5;
+  }
+  .site-header__cta {
+    margin-top: 20px;
+    justify-content: center;
+    gap: 0;
+    border-bottom: 0 !important;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    text-align: center;
+  }
+  .site-header__cta span {
+    display: none;
+  }
+  body.nav-open {
+    overflow: hidden;
+  }
+}
 
 /* Case-study responsive layout: pairs of desktop/mobile screenshots, two-up columns */
-@media (max-width:1000px){
-  [data-cols]{grid-template-columns:1fr !important;gap:36px !important}
-  [data-flip] > div:first-child{order:2}
-  [data-pair]{grid-template-columns:1fr !important}
+@media (max-width: 1000px) {
+  [data-cols] {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  [data-flip] > div:first-child {
+    order: 2;
+  }
+  [data-pair] {
+    grid-template-columns: 1fr !important;
+  }
 }
-@media (max-width:640px){
-  section{padding-left:20px !important;padding-right:20px !important}
+@media (max-width: 640px) {
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }

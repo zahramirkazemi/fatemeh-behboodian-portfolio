@@ -1,183 +1,1274 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taxi Shahr — Bilingual Ride-Hailing Application · Fatemeh Behboodian</title>
-<meta name="description" content="English (LTR) UI for a ride-hailing platform's passenger and driver apps: booking, live tracking, payments and trip history.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
-<style>
-  :root{ --hover:#C99A00; --selection:#FCE49A; }
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Taxi Shahr — Bilingual Ride-Hailing Application · Fatemeh Behboodian
+    </title>
+    <meta
+      name="description"
+      content="English (LTR) UI for a ride-hailing platform's passenger and driver apps: booking, live tracking, payments and trip history."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+    <style>
+      :root {
+        --hover: #c99a00;
+        --selection: #fce49a;
+      }
+      @media (max-width: 640px) {
+        .case-phones {
+          height: auto !important;
+          padding: 20px 14px !important;
+          gap: 10px !important;
+        }
+        .case-phones img {
+          height: auto !important;
+          width: calc(50% - 5px) !important;
+          max-height: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div data-root="taxishahr" style="position: relative; overflow-x: clip">
+      <div
+        data-progress="1"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 2px;
+          width: 0%;
+          background: #c99a00;
+          z-index: 60;
+        "
+      ></div>
 
-<div data-root="taxishahr" style="position:relative;overflow-x:clip">
-
-  <div data-progress="1" style="position:fixed;top:0;left:0;height:2px;width:0%;background:#C99A00;z-index:60"></div>
-
-  <div style="position:sticky;top:0;z-index:50;background:rgba(250,249,246,0.82);backdrop-filter:blur(10px);border-bottom:1px solid #E4DFD5">
-    <div style="max-width:1180px;margin:0 auto;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between">
-      <a href="index.html" style="display:flex;align-items:center;gap:11px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#5F5B54">&larr; FATEMEH BEHBOODIAN</a>
-      <div style="display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500">
-        <a href="index.html#work">Work</a>
-        <a href="index.html#contact" style="background:#1A1917;color:#FAF9F6;padding:8px 17px;border-radius:999px">Contact</a>
-      </div>
-    </div>
-  </div>
-
-  <section data-screen-label="Case study title" style="padding:88px 40px 64px;background-image:radial-gradient(#D9D3C7 1.15px,transparent 1.15px);background-size:26px 26px">
-    <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="1" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px;font-family:'JetBrains Mono',monospace;font-size:11px">
-        <div style="padding:6px 12px;border-radius:999px;background:#C99A00;color:#FAF9F6">CASE STUDY</div>
-        <div style="padding:6px 12px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">RIDE-HAILING</div>
-        <div style="padding:6px 12px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">LOCALIZATION (LTR)</div>
-        <div style="padding:6px 12px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">IN DEVELOPMENT</div>
-      </div>
-      <h1 data-reveal="1" data-reveal-delay="80" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(48px,7vw,110px);line-height:0.92;font-weight:400;letter-spacing:-0.045em">Taxi Shahr</h1>
-      <div data-reveal="1" data-reveal-delay="110" style="margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.1em;color:#C99A00">BILINGUAL RIDE-HAILING APPLICATION</div>
-      <p data-reveal="1" data-reveal-delay="140" style="margin:20px 0 0;font-size:clamp(19px,2vw,26px);line-height:1.45;color:#4A463F;max-width:760px;text-wrap:pretty">Taxi Shahr is a ride-hailing platform designed to connect passengers and drivers through a seamless transportation experience. The project includes dedicated applications for both user and driver workflows.</p>
-      <div data-reveal="1" data-reveal-delay="220" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;margin-top:56px;padding-top:28px;border-top:1px solid #E4DFD5">
-        <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8A857C;margin-bottom:7px">ROLE</div><div style="font-size:16px">English (LTR) UI design</div></div>
-        <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8A857C;margin-bottom:7px">SCOPE</div><div style="font-size:16px">22 passenger + 18 driver screens</div></div>
-        <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8A857C;margin-bottom:7px">DEVICES</div><div style="font-size:16px">Mobile, passenger and driver apps</div></div>
-        <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8A857C;margin-bottom:7px">STATUS</div><div style="font-size:16px">In development, not yet released</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:0 40px 84px">
-    <div data-reveal="1" style="max-width:1180px;margin:0 auto;height:620px;border-radius:18px;border:1px solid #E9DFC4;background:#FFF7E3;overflow:hidden;box-shadow:0 40px 70px -40px rgba(201,154,0,0.34);display:flex;align-items:center;justify-content:center;gap:20px;padding:40px">
-      <img src="assets/taxishahr-select-service.png" alt="Select service" style="height:100%;width:auto;border-radius:20px;box-shadow:0 20px 40px -20px rgba(26,25,23,0.3);display:block">
-      <img src="assets/taxishahr-tracking-live.png" alt="Live trip tracking" style="height:100%;width:auto;border-radius:20px;box-shadow:0 20px 40px -20px rgba(26,25,23,0.3);display:block">
-    </div>
-    <div style="max-width:1180px;margin:10px auto 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">SERVICE SELECTION AND LIVE TRIP TRACKING &mdash; PASSENGER APP, ENGLISH (LTR)</div>
-  </section>
-
-  <section data-screen-label="Overview" style="padding:0 40px 96px">
-    <div data-cols="1" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:start">
-      <div data-reveal="1">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#C99A00;margin-bottom:18px">00 &mdash; OVERVIEW</div>
-        <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,2.8vw,38px);line-height:1.06;font-weight:400;letter-spacing:-0.035em">Taxi Shahr &ndash; Bilingual Ride-Hailing Application</h2>
-      </div>
-      <div data-reveal="1" data-reveal-delay="80" style="display:flex;flex-direction:column;gap:22px;max-width:640px">
-        <p style="margin:0;font-size:17px;line-height:1.7;color:#4A463F;text-wrap:pretty">Taxi Shahr is a ride-hailing platform designed to connect passengers and drivers through a seamless transportation experience. The project includes dedicated applications for both user and driver workflows.</p>
-        <p style="margin:0;font-size:17px;line-height:1.7;color:#4A463F;text-wrap:pretty">My responsibility was designing the English (LTR) version of the application, ensuring a consistent user experience across all passenger and driver interfaces. This included adapting layouts for left-to-right reading, expanding the existing Design System with English-specific components, and creating interactive prototypes.</p>
-      </div>
-    </div>
-  </section>
-
-  <section data-screen-label="Passenger app" style="padding:88px 40px 0;background-image:radial-gradient(#D9D3C7 1.15px,transparent 1.15px);background-size:26px 26px;border-top:1px solid #E4DFD5">
-    <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#C99A00;margin-bottom:18px">01 &mdash; PASSENGER APP</div>
-      <h2 data-reveal="1" data-reveal-delay="60" style="margin:0 0 16px;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4vw,56px);line-height:1;font-weight:400;letter-spacing:-0.04em;max-width:820px">Booking a ride, tracked the whole way.</h2>
-      <p data-reveal="1" data-reveal-delay="100" style="margin:0 0 32px;font-size:17px;line-height:1.7;color:#4A463F;max-width:640px;text-wrap:pretty">The passenger application allows users to book rides by selecting pickup and destination locations, track their driver in real time, manage payments, and review trip history.</p>
-
-      <div data-reveal="1" data-reveal-delay="140" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:80px">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;background:#1A1917;color:#FAF9F6">22 CORE SCREENS, INCLUDING:</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Authentication</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Home</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Map &amp; Ride Request</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Live Trip Tracking</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Driver Profile</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Trip Details &amp; History</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Wallet</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Profile</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Support</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">About Us</div>
-      </div>
-
-      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;padding-bottom:96px">
-        <figure style="margin:0"><div style="border-radius:18px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 20px 36px -22px rgba(26,25,23,0.28)"><img src="assets/taxishahr-select-service.png" alt="Select service" style="width:100%;display:block"></div><figcaption style="margin-top:10px;font-size:14px;color:#4A463F">Map &amp; ride request &mdash; choose a service tier</figcaption></figure>
-        <figure style="margin:0"><div style="border-radius:18px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 20px 36px -22px rgba(26,25,23,0.28)"><img src="assets/taxishahr-request-accept.png" alt="Ride request, driver side" style="width:100%;display:block"></div><figcaption style="margin-top:10px;font-size:14px;color:#4A463F">Incoming ride request with fare and countdown</figcaption></figure>
-        <figure style="margin:0"><div style="border-radius:18px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 20px 36px -22px rgba(26,25,23,0.28)"><img src="assets/taxishahr-tracking-live.png" alt="Live trip tracking" style="width:100%;display:block"></div><figcaption style="margin-top:10px;font-size:14px;color:#4A463F">Live tracking &mdash; driver en route, in-app chat and calling</figcaption></figure>
-        <figure style="margin:0"><div style="border-radius:18px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 20px 36px -22px rgba(26,25,23,0.28)"><img src="assets/taxishahr-tracking-destination.png" alt="Arriving at destination" style="width:100%;display:block"></div><figcaption style="margin-top:10px;font-size:14px;color:#4A463F">Multi-stop trip, arriving at the final destination</figcaption></figure>
-        <figure style="margin:0"><div style="border-radius:18px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 20px 36px -22px rgba(26,25,23,0.28)"><img src="assets/taxishahr-payment.png" alt="Payment" style="width:100%;display:block"></div><figcaption style="margin-top:10px;font-size:14px;color:#4A463F">Payment &mdash; wallet, banking portal, cash or discount code</figcaption></figure>
-        <figure style="margin:0"><div style="border-radius:18px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 20px 36px -22px rgba(26,25,23,0.28)"><img src="assets/taxishahr-history.png" alt="Trip history" style="width:100%;display:block"></div><figcaption style="margin-top:10px;font-size:14px;color:#4A463F">Trip history with route and fare per ride</figcaption></figure>
-        <figure style="margin:0"><div style="border-radius:18px;overflow:hidden;border:1px solid #E4DFD5;box-shadow:0 20px 36px -22px rgba(26,25,23,0.28)"><img src="assets/taxishahr-subscription.png" alt="Subscription plan" style="width:100%;display:block"></div><figcaption style="margin-top:10px;font-size:14px;color:#4A463F">Subscription plans for the driver's Taxi Shahr Business tools</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section data-screen-label="Driver app" style="padding:88px 40px 96px;border-top:1px solid #E4DFD5">
-    <div data-cols="1" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:start">
-      <div data-reveal="1">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#C99A00;margin-bottom:18px">02 &mdash; DRIVER APP</div>
-        <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,2.8vw,38px);line-height:1.06;font-weight:400;letter-spacing:-0.035em">The other side of the same trip</h2>
-      </div>
-      <div data-reveal="1" data-reveal-delay="80" style="display:flex;flex-direction:column;gap:22px;max-width:640px">
-        <p style="margin:0;font-size:17px;line-height:1.7;color:#4A463F;text-wrap:pretty">The driver application enables drivers to review ride requests, accept or reject trips, communicate with passengers, and manage ongoing activities.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;background:#1A1917;color:#FAF9F6">18 CORE SCREENS, INCLUDING:</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Ride Requests</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Accept / Reject Flow</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Trip History</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Chat</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Wallet</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Ratings</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">Driver Profile</div>
+      <div
+        style="
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          backdrop-filter: blur(10px);
+          background: rgba(250, 249, 246, 0.82);
+          border-bottom: 1px solid #e4dfd5;
+        "
+      >
+        <div
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <a
+            href="index.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 11px;
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              color: #5f5b54;
+            "
+            >&larr; FATEMEH BEHBOODIAN</a
+          >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 26px;
+              font-size: 14px;
+              font-weight: 500;
+            "
+          >
+            <a href="index.html#work">Work</a>
+            <a
+              href="index.html#contact"
+              style="
+                background: #1a1917;
+                color: #faf9f6;
+                padding: 8px 17px;
+                border-radius: 999px;
+              "
+              >Contact</a
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section data-screen-label="Responsibilities" style="padding:88px 40px;background:#1A1917;color:#F4F8F5">
-    <div data-cols="1" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
-      <div data-reveal="1">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#FCD168;margin-bottom:20px">MY CONTRIBUTIONS</div>
-        <div style="display:flex;flex-direction:column">
-          <div style="padding:16px 0;border-top:1px solid rgba(244,248,245,0.16);font-size:17px">English (LTR) UI design</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(244,248,245,0.16);font-size:17px">Localization of the user and driver applications</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(244,248,245,0.16);font-size:17px">Interactive prototyping</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(244,248,245,0.16);font-size:17px">Design System expansion with reusable components</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(244,248,245,0.16);border-bottom:1px solid rgba(244,248,245,0.16);font-size:17px">Auto Layout implementation</div>
+      <section
+        data-screen-label="Case study title"
+        style="
+          padding: 88px 40px 64px;
+          background-image: radial-gradient(#d9d3c7 1.15px, transparent 1.15px);
+          background-size: 26px 26px;
+        "
+      >
+        <div style="max-width: 1180px; margin: 0 auto">
+          <div
+            data-reveal="1"
+            style="
+              display: flex;
+              gap: 12px;
+              flex-wrap: wrap;
+              margin-bottom: 26px;
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 11px;
+            "
+          >
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                background: #c99a00;
+                color: #faf9f6;
+              "
+            >
+              CASE STUDY
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              RIDE-HAILING
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              LOCALIZATION (LTR)
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              IN DEVELOPMENT
+            </div>
+          </div>
+          <h1
+            data-reveal="1"
+            data-reveal-delay="80"
+            style="
+              margin: 0;
+              font-family: &quot;Archivo Black&quot;, sans-serif;
+              font-size: clamp(48px, 7vw, 110px);
+              line-height: 0.92;
+              font-weight: 400;
+              letter-spacing: -0.045em;
+            "
+          >
+            Taxi Shahr
+          </h1>
+          <div
+            data-reveal="1"
+            data-reveal-delay="110"
+            style="
+              margin-top: 14px;
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 13px;
+              letter-spacing: 0.1em;
+              color: #c99a00;
+            "
+          >
+            BILINGUAL RIDE-HAILING APPLICATION
+          </div>
+          <p
+            data-reveal="1"
+            data-reveal-delay="140"
+            style="
+              margin: 20px 0 0;
+              font-size: clamp(19px, 2vw, 26px);
+              line-height: 1.45;
+              color: #4a463f;
+              max-width: 760px;
+              text-wrap: pretty;
+            "
+          >
+            Taxi Shahr is a ride-hailing platform designed to connect passengers
+            and drivers through a seamless transportation experience. The
+            project includes dedicated applications for both user and driver
+            workflows.
+          </p>
+          <div
+            data-reveal="1"
+            data-reveal-delay="220"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+              gap: 28px;
+              margin-top: 56px;
+              padding-top: 28px;
+              border-top: 1px solid #e4dfd5;
+            "
+          >
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.14em;
+                  color: #8a857c;
+                  margin-bottom: 7px;
+                "
+              >
+                ROLE
+              </div>
+              <div style="font-size: 16px">English (LTR) UI design</div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.14em;
+                  color: #8a857c;
+                  margin-bottom: 7px;
+                "
+              >
+                SCOPE
+              </div>
+              <div style="font-size: 16px">
+                22 passenger + 18 driver screens
+              </div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.14em;
+                  color: #8a857c;
+                  margin-bottom: 7px;
+                "
+              >
+                DEVICES
+              </div>
+              <div style="font-size: 16px">
+                Mobile, passenger and driver apps
+              </div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.14em;
+                  color: #8a857c;
+                  margin-bottom: 7px;
+                "
+              >
+                STATUS
+              </div>
+              <div style="font-size: 16px">
+                In development, not yet released
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div data-reveal="1" data-reveal-delay="100">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#FCD168;margin-bottom:20px">DESIGN HIGHLIGHTS</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
-          <div style="padding:22px;border-radius:14px;background:rgba(244,248,245,0.06);border:1px solid rgba(244,248,245,0.14);font-size:16px;line-height:1.5">Bilingual (LTR) interface</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(244,248,245,0.06);border:1px solid rgba(244,248,245,0.14);font-size:16px;line-height:1.5">High-fidelity interactive prototype</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(244,248,245,0.06);border:1px solid rgba(244,248,245,0.14);font-size:16px;line-height:1.5">Auto Layout across all screens</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(244,248,245,0.06);border:1px solid rgba(244,248,245,0.14);font-size:16px;line-height:1.5">Reusable component library</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(244,248,245,0.06);border:1px solid rgba(244,248,245,0.14);font-size:16px;line-height:1.5">Consistent Design System</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(244,248,245,0.06);border:1px solid rgba(244,248,245,0.14);font-size:16px;line-height:1.5">Scalable UI architecture</div>
+      </section>
+
+      <section style="padding: 0 40px 84px">
+        <div
+          class="case-phones"
+          data-reveal="1"
+          style="
+            max-width: 600px;
+            margin: 0 auto;
+            height: 620px;
+            border-radius: 18px;
+            border: 1px solid #e9dfc4;
+            background: #fff7e3;
+            overflow: hidden;
+            box-shadow: 0 40px 70px -40px rgba(201, 154, 0, 0.34);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+          "
+        >
+          <img
+            src="assets/taxishahr-select-service.png"
+            alt="Select service"
+            style="
+              height: 100%;
+              width: auto;
+              border-radius: 20px;
+              box-shadow: 0 20px 40px -20px rgba(26, 25, 23, 0.3);
+              display: block;
+            "
+          />
+          <img
+            src="assets/taxishahr-tracking-live.png"
+            alt="Live trip tracking"
+            style="
+              height: 100%;
+              width: auto;
+              border-radius: 20px;
+              box-shadow: 0 20px 40px -20px rgba(26, 25, 23, 0.3);
+              display: block;
+            "
+          />
         </div>
-      </div>
-    </div>
-  </section>
+        <div
+          style="
+            max-width: 600px;
+            margin: 10px auto 0;
+            font-family: &quot;JetBrains Mono&quot;, monospace;
+            font-size: 11px;
+            color: #8a857c;
+          "
+        >
+          SERVICE SELECTION AND LIVE TRIP TRACKING &mdash; PASSENGER APP,
+          ENGLISH (LTR)
+        </div>
+      </section>
 
-  <section data-screen-label="Status" style="padding:88px 40px">
-    <div data-reveal="1" style="max-width:1180px;margin:0 auto;border-radius:18px;border:1px solid #E4DFD5;background:#EFECE4;padding:44px;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start">
-      <div style="max-width:620px">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#8A857C;margin-bottom:14px">PROJECT STATUS</div>
-        <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,3vw,40px);line-height:1.05;font-weight:400;letter-spacing:-0.035em">Currently under development and not yet publicly released.</h2>
-      </div>
-      <div style="width:210px;padding:18px;background:#FCE49A;border-radius:3px;box-shadow:0 14px 26px -14px rgba(26,25,23,0.3);animation:bobA 7.5s ease-in-out infinite">
-        <div style="font-size:14px;line-height:1.45;color:#4A3A00">Passenger and driver apps designed in parallel, English layer complete.</div>
-      </div>
-    </div>
-  </section>
+      <section data-screen-label="Overview" style="padding: 0 40px 96px">
+        <div
+          data-cols="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 56px;
+            align-items: start;
+          "
+        >
+          <div data-reveal="1">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #c99a00;
+                margin-bottom: 18px;
+              "
+            >
+              00 &mdash; OVERVIEW
+            </div>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Archivo Black&quot;, sans-serif;
+                font-size: clamp(26px, 2.8vw, 38px);
+                line-height: 1.06;
+                font-weight: 400;
+                letter-spacing: -0.035em;
+              "
+            >
+              Taxi Shahr &ndash; Bilingual Ride-Hailing Application
+            </h2>
+          </div>
+          <div
+            data-reveal="1"
+            data-reveal-delay="80"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 22px;
+              max-width: 640px;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-size: 17px;
+                line-height: 1.7;
+                color: #4a463f;
+                text-wrap: pretty;
+              "
+            >
+              Taxi Shahr is a ride-hailing platform designed to connect
+              passengers and drivers through a seamless transportation
+              experience. The project includes dedicated applications for both
+              user and driver workflows.
+            </p>
+            <p
+              style="
+                margin: 0;
+                font-size: 17px;
+                line-height: 1.7;
+                color: #4a463f;
+                text-wrap: pretty;
+              "
+            >
+              My responsibility was designing the English (LTR) version of the
+              application, ensuring a consistent user experience across all
+              passenger and driver interfaces. This included adapting layouts
+              for left-to-right reading, expanding the existing Design System
+              with English-specific components, and creating interactive
+              prototypes.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <section data-screen-label="Next" style="padding:88px 40px 40px;background:#1A1917;color:#FAF9F6">
-    <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#FCD168;margin-bottom:20px">NEXT</div>
-      <h2 data-reveal="1" data-reveal-delay="60" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(34px,4.4vw,62px);line-height:0.98;font-weight:400;letter-spacing:-0.04em;max-width:780px">Want the rest of the work, or a conversation?</h2>
-      <div data-reveal="1" data-reveal-delay="140" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:34px">
-        <a href="index.html#work" style="background:#FCD168;color:#1A1917;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:600">Back to all work</a>
-        <a href="index.html#contact" style="border:1.5px solid rgba(250,249,246,0.3);color:#FAF9F6;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:500">Get in touch</a>
-      </div>
-      <div style="margin-top:72px;padding-top:26px;border-top:1px solid rgba(250,249,246,0.14);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(250,249,246,0.44)">
-        <div>FATEMEH BEHBOODIAN &middot; TAXI SHAHR CASE STUDY</div>
-        <a href="index.html" style="color:rgba(250,249,246,0.44)">HOME &uarr;</a>
-      </div>
-    </div>
-  </section>
-</div>
+      <section
+        data-screen-label="Passenger app"
+        style="
+          padding: 88px 40px 0;
+          background-image: radial-gradient(#d9d3c7 1.15px, transparent 1.15px);
+          background-size: 26px 26px;
+          border-top: 1px solid #e4dfd5;
+        "
+      >
+        <div style="max-width: 1180px; margin: 0 auto">
+          <div
+            data-reveal="1"
+            style="
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              letter-spacing: 0.16em;
+              color: #c99a00;
+              margin-bottom: 18px;
+            "
+          >
+            01 &mdash; PASSENGER APP
+          </div>
+          <h2
+            data-reveal="1"
+            data-reveal-delay="60"
+            style="
+              margin: 0 0 16px;
+              font-family: &quot;Archivo Black&quot;, sans-serif;
+              font-size: clamp(32px, 4vw, 56px);
+              line-height: 1;
+              font-weight: 400;
+              letter-spacing: -0.04em;
+              max-width: 820px;
+            "
+          >
+            Booking a ride, tracked the whole way.
+          </h2>
+          <p
+            data-reveal="1"
+            data-reveal-delay="100"
+            style="
+              margin: 0 0 32px;
+              font-size: 17px;
+              line-height: 1.7;
+              color: #4a463f;
+              max-width: 640px;
+              text-wrap: pretty;
+            "
+          >
+            The passenger application allows users to book rides by selecting
+            pickup and destination locations, track their driver in real time,
+            manage payments, and review trip history.
+          </p>
 
-<script src="js/site.js"></script>
-</body>
+          <div
+            data-reveal="1"
+            data-reveal-delay="140"
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 80px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                background: #1a1917;
+                color: #faf9f6;
+              "
+            >
+              22 CORE SCREENS, INCLUDING:
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Authentication
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Home
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Map &amp; Ride Request
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Live Trip Tracking
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Driver Profile
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Trip Details &amp; History
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Wallet
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Profile
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              Support
+            </div>
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 11px;
+                padding: 8px 14px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              About Us
+            </div>
+          </div>
+
+          <div
+            data-reveal="1"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+              gap: 22px;
+              padding-bottom: 96px;
+            "
+          >
+            <figure style="margin: 0">
+              <div
+                style="
+                  border-radius: 18px;
+                  overflow: hidden;
+                  border: 1px solid #e4dfd5;
+                  box-shadow: 0 20px 36px -22px rgba(26, 25, 23, 0.28);
+                "
+              >
+                <img
+                  src="assets/taxishahr-select-service.png"
+                  alt="Select service"
+                  style="width: 100%; display: block"
+                />
+              </div>
+              <figcaption
+                style="margin-top: 10px; font-size: 14px; color: #4a463f"
+              >
+                Map &amp; ride request &mdash; choose a service tier
+              </figcaption>
+            </figure>
+            <figure style="margin: 0">
+              <div
+                style="
+                  border-radius: 18px;
+                  overflow: hidden;
+                  border: 1px solid #e4dfd5;
+                  box-shadow: 0 20px 36px -22px rgba(26, 25, 23, 0.28);
+                "
+              >
+                <img
+                  src="assets/taxishahr-request-accept.png"
+                  alt="Ride request, driver side"
+                  style="width: 100%; display: block"
+                />
+              </div>
+              <figcaption
+                style="margin-top: 10px; font-size: 14px; color: #4a463f"
+              >
+                Incoming ride request with fare and countdown
+              </figcaption>
+            </figure>
+            <figure style="margin: 0">
+              <div
+                style="
+                  border-radius: 18px;
+                  overflow: hidden;
+                  border: 1px solid #e4dfd5;
+                  box-shadow: 0 20px 36px -22px rgba(26, 25, 23, 0.28);
+                "
+              >
+                <img
+                  src="assets/taxishahr-tracking-live.png"
+                  alt="Live trip tracking"
+                  style="width: 100%; display: block"
+                />
+              </div>
+              <figcaption
+                style="margin-top: 10px; font-size: 14px; color: #4a463f"
+              >
+                Live tracking &mdash; driver en route, in-app chat and calling
+              </figcaption>
+            </figure>
+            <figure style="margin: 0">
+              <div
+                style="
+                  border-radius: 18px;
+                  overflow: hidden;
+                  border: 1px solid #e4dfd5;
+                  box-shadow: 0 20px 36px -22px rgba(26, 25, 23, 0.28);
+                "
+              >
+                <img
+                  src="assets/taxishahr-tracking-destination.png"
+                  alt="Arriving at destination"
+                  style="width: 100%; display: block"
+                />
+              </div>
+              <figcaption
+                style="margin-top: 10px; font-size: 14px; color: #4a463f"
+              >
+                Multi-stop trip, arriving at the final destination
+              </figcaption>
+            </figure>
+            <figure style="margin: 0">
+              <div
+                style="
+                  border-radius: 18px;
+                  overflow: hidden;
+                  border: 1px solid #e4dfd5;
+                  box-shadow: 0 20px 36px -22px rgba(26, 25, 23, 0.28);
+                "
+              >
+                <img
+                  src="assets/taxishahr-payment.png"
+                  alt="Payment"
+                  style="width: 100%; display: block"
+                />
+              </div>
+              <figcaption
+                style="margin-top: 10px; font-size: 14px; color: #4a463f"
+              >
+                Payment &mdash; wallet, banking portal, cash or discount code
+              </figcaption>
+            </figure>
+            <figure style="margin: 0">
+              <div
+                style="
+                  border-radius: 18px;
+                  overflow: hidden;
+                  border: 1px solid #e4dfd5;
+                  box-shadow: 0 20px 36px -22px rgba(26, 25, 23, 0.28);
+                "
+              >
+                <img
+                  src="assets/taxishahr-history.png"
+                  alt="Trip history"
+                  style="width: 100%; display: block"
+                />
+              </div>
+              <figcaption
+                style="margin-top: 10px; font-size: 14px; color: #4a463f"
+              >
+                Trip history with route and fare per ride
+              </figcaption>
+            </figure>
+            <figure style="margin: 0">
+              <div
+                style="
+                  border-radius: 18px;
+                  overflow: hidden;
+                  border: 1px solid #e4dfd5;
+                  box-shadow: 0 20px 36px -22px rgba(26, 25, 23, 0.28);
+                "
+              >
+                <img
+                  src="assets/taxishahr-subscription.png"
+                  alt="Subscription plan"
+                  style="width: 100%; display: block"
+                />
+              </div>
+              <figcaption
+                style="margin-top: 10px; font-size: 14px; color: #4a463f"
+              >
+                Subscription plans for the driver's Taxi Shahr Business tools
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section
+        data-screen-label="Driver app"
+        style="padding: 88px 40px 96px; border-top: 1px solid #e4dfd5"
+      >
+        <div
+          data-cols="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 56px;
+            align-items: start;
+          "
+        >
+          <div data-reveal="1">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #c99a00;
+                margin-bottom: 18px;
+              "
+            >
+              02 &mdash; DRIVER APP
+            </div>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Archivo Black&quot;, sans-serif;
+                font-size: clamp(26px, 2.8vw, 38px);
+                line-height: 1.06;
+                font-weight: 400;
+                letter-spacing: -0.035em;
+              "
+            >
+              The other side of the same trip
+            </h2>
+          </div>
+          <div
+            data-reveal="1"
+            data-reveal-delay="80"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 22px;
+              max-width: 640px;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-size: 17px;
+                line-height: 1.7;
+                color: #4a463f;
+                text-wrap: pretty;
+              "
+            >
+              The driver application enables drivers to review ride requests,
+              accept or reject trips, communicate with passengers, and manage
+              ongoing activities.
+            </p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap">
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  background: #1a1917;
+                  color: #faf9f6;
+                "
+              >
+                18 CORE SCREENS, INCLUDING:
+              </div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  border: 1px solid #d6d0c4;
+                  color: #5f5b54;
+                "
+              >
+                Ride Requests
+              </div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  border: 1px solid #d6d0c4;
+                  color: #5f5b54;
+                "
+              >
+                Accept / Reject Flow
+              </div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  border: 1px solid #d6d0c4;
+                  color: #5f5b54;
+                "
+              >
+                Trip History
+              </div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  border: 1px solid #d6d0c4;
+                  color: #5f5b54;
+                "
+              >
+                Chat
+              </div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  border: 1px solid #d6d0c4;
+                  color: #5f5b54;
+                "
+              >
+                Wallet
+              </div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  border: 1px solid #d6d0c4;
+                  color: #5f5b54;
+                "
+              >
+                Ratings
+              </div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  border: 1px solid #d6d0c4;
+                  color: #5f5b54;
+                "
+              >
+                Driver Profile
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        data-screen-label="Responsibilities"
+        style="padding: 88px 40px; background: #1a1917; color: #f4f8f5"
+      >
+        <div
+          data-cols="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div data-reveal="1">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #fcd168;
+                margin-bottom: 20px;
+              "
+            >
+              MY CONTRIBUTIONS
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(244, 248, 245, 0.16);
+                  font-size: 17px;
+                "
+              >
+                English (LTR) UI design
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(244, 248, 245, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Localization of the user and driver applications
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(244, 248, 245, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Interactive prototyping
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(244, 248, 245, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Design System expansion with reusable components
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(244, 248, 245, 0.16);
+                  border-bottom: 1px solid rgba(244, 248, 245, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Auto Layout implementation
+              </div>
+            </div>
+          </div>
+          <div data-reveal="1" data-reveal-delay="100">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #fcd168;
+                margin-bottom: 20px;
+              "
+            >
+              DESIGN HIGHLIGHTS
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 14px;
+              "
+            >
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(244, 248, 245, 0.06);
+                  border: 1px solid rgba(244, 248, 245, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Bilingual (LTR) interface
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(244, 248, 245, 0.06);
+                  border: 1px solid rgba(244, 248, 245, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                High-fidelity interactive prototype
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(244, 248, 245, 0.06);
+                  border: 1px solid rgba(244, 248, 245, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Auto Layout across all screens
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(244, 248, 245, 0.06);
+                  border: 1px solid rgba(244, 248, 245, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Reusable component library
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(244, 248, 245, 0.06);
+                  border: 1px solid rgba(244, 248, 245, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Consistent Design System
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(244, 248, 245, 0.06);
+                  border: 1px solid rgba(244, 248, 245, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Scalable UI architecture
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="Status" style="padding: 88px 40px">
+        <div
+          data-reveal="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            border-radius: 18px;
+            border: 1px solid #e4dfd5;
+            background: #efece4;
+            padding: 44px;
+            display: flex;
+            justify-content: space-between;
+            gap: 32px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+          "
+        >
+          <div style="max-width: 620px">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #8a857c;
+                margin-bottom: 14px;
+              "
+            >
+              PROJECT STATUS
+            </div>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Archivo Black&quot;, sans-serif;
+                font-size: clamp(26px, 3vw, 40px);
+                line-height: 1.05;
+                font-weight: 400;
+                letter-spacing: -0.035em;
+              "
+            >
+              Currently under development and not yet publicly released.
+            </h2>
+          </div>
+          <div
+            style="
+              width: 210px;
+              padding: 18px;
+              background: #fce49a;
+              border-radius: 3px;
+              box-shadow: 0 14px 26px -14px rgba(26, 25, 23, 0.3);
+              animation: bobA 7.5s ease-in-out infinite;
+            "
+          >
+            <div style="font-size: 14px; line-height: 1.45; color: #4a3a00">
+              Passenger and driver apps designed in parallel, English layer
+              complete.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        data-screen-label="Next"
+        style="padding: 88px 40px 40px; background: #1a1917; color: #faf9f6"
+      >
+        <div style="max-width: 1180px; margin: 0 auto">
+          <div
+            data-reveal="1"
+            style="
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              letter-spacing: 0.16em;
+              color: #fcd168;
+              margin-bottom: 20px;
+            "
+          >
+            NEXT
+          </div>
+          <h2
+            data-reveal="1"
+            data-reveal-delay="60"
+            style="
+              margin: 0;
+              font-family: &quot;Archivo Black&quot;, sans-serif;
+              font-size: clamp(34px, 4.4vw, 62px);
+              line-height: 0.98;
+              font-weight: 400;
+              letter-spacing: -0.04em;
+              max-width: 780px;
+            "
+          >
+            Want the rest of the work, or a conversation?
+          </h2>
+          <div
+            data-reveal="1"
+            data-reveal-delay="140"
+            style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px"
+          >
+            <a
+              href="index.html#work"
+              style="
+                background: #fcd168;
+                color: #1a1917;
+                padding: 14px 26px;
+                border-radius: 999px;
+                font-size: 15px;
+                font-weight: 600;
+              "
+              >Back to all work</a
+            >
+            <a
+              href="index.html#contact"
+              style="
+                border: 1.5px solid rgba(250, 249, 246, 0.3);
+                color: #faf9f6;
+                padding: 14px 26px;
+                border-radius: 999px;
+                font-size: 15px;
+                font-weight: 500;
+              "
+              >Get in touch</a
+            >
+          </div>
+          <div
+            style="
+              margin-top: 72px;
+              padding-top: 26px;
+              border-top: 1px solid rgba(250, 249, 246, 0.14);
+              display: flex;
+              justify-content: space-between;
+              gap: 20px;
+              flex-wrap: wrap;
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 11px;
+              color: rgba(250, 249, 246, 0.44);
+            "
+          >
+            <div>FATEMEH BEHBOODIAN &middot; TAXI SHAHR CASE STUDY</div>
+            <a href="index.html" style="color: rgba(250, 249, 246, 0.44)"
+              >HOME &uarr;</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/site.js"></script>
+  </body>
 </html>

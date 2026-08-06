@@ -1,298 +1,1741 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vamax — Fintech Loan Management Dashboard · Fatemeh Behboodian</title>
-<meta name="description" content="A credit and installment dashboard for people who cannot calculate an interest rate, and should not have to.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
-<style>
-  :root{ --hover:#5B3DF5; --selection:#FFD84D; }
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Vamax — Fintech Loan Management Dashboard · Fatemeh Behboodian
+    </title>
+    <meta
+      name="description"
+      content="A credit and installment dashboard for people who cannot calculate an interest rate, and should not have to."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+    <style>
+      :root {
+        --hover: #5b3df5;
+        --selection: #ffd84d;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-root="vamax" style="position: relative; overflow-x: clip">
+      <div
+        data-progress="1"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 2px;
+          width: 0%;
+          background: #5b3df5;
+          z-index: 60;
+        "
+      ></div>
 
-<div data-root="vamax" style="position:relative;overflow-x:clip">
-
-  <div data-progress="1" style="position:fixed;top:0;left:0;height:2px;width:0%;background:#5B3DF5;z-index:60"></div>
-
-  <div style="position:sticky;top:0;z-index:50;background:rgba(250,249,246,0.82);backdrop-filter:blur(10px);border-bottom:1px solid #E4DFD5">
-    <div style="max-width:1180px;margin:0 auto;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between">
-      <a href="index.html" style="display:flex;align-items:center;gap:11px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#5F5B54">&larr; FATEMEH BEHBOODIAN</a>
-      <div style="display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500">
-        <a href="index.html#work">Work</a>
-        <a href="index.html#contact" style="background:#1A1917;color:#FAF9F6;padding:8px 17px;border-radius:999px">Contact</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ TITLE ============ -->
-  <section data-screen-label="Case study title" style="padding:88px 40px 64px;background-image:radial-gradient(#D9D3C7 1.15px,transparent 1.15px);background-size:26px 26px">
-    <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="1" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px;font-family:'JetBrains Mono',monospace;font-size:11px">
-        <div style="padding:6px 12px;border-radius:999px;background:#5B3DF5;color:#FAF9F6">CASE STUDY</div>
-        <div style="padding:6px 12px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">FINTECH</div>
-        <div style="padding:6px 12px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">DASHBOARD</div>
-        <div style="padding:6px 12px;border-radius:999px;border:1px solid #D6D0C4;color:#5F5B54">2026</div>
-      </div>
-      <h1 data-reveal="1" data-reveal-delay="80" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(48px,7vw,110px);line-height:0.92;font-weight:400;letter-spacing:-0.045em">Vamax</h1>
-      <p data-reveal="1" data-reveal-delay="140" style="margin:28px 0 0;font-size:clamp(19px,2vw,26px);line-height:1.45;color:#4A463F;max-width:720px;text-wrap:pretty">A credit and installment dashboard for people who cannot calculate an interest rate, and should not have to.</p>
-      <div data-reveal="1" data-reveal-delay="220" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px;margin-top:56px;padding-top:28px;border-top:1px solid #E4DFD5">
-        <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8A857C;margin-bottom:7px">ROLE</div><div style="font-size:16px">UI/UX design, end to end</div></div>
-        <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8A857C;margin-bottom:7px">CONTEXT</div><div style="font-size:16px">Ehsan Ezzati's Advanced UI/UX course, team project</div></div>
-        <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8A857C;margin-bottom:7px">OUTPUT</div><div style="font-size:16px">Dashboard, components, pages</div></div>
-        <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8A857C;margin-bottom:7px">PUBLISHED</div><div style="font-size:16px">Free on Figma Community</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ HERO SHOT ============ -->
-  <section style="padding:0 40px 84px">
-    <div data-reveal="1" style="max-width:1180px;margin:0 auto;height:620px;border-radius:18px;border:1px solid #DCD5F2;background:#F6F4FE;overflow:hidden;box-shadow:0 40px 70px -40px rgba(91,61,245,0.34)">
-      <img src="assets/vamax-landing.png" alt="Vamax landing page" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
-    </div>
-    <div style="max-width:1180px;margin:10px auto 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A857C">LANDING PAGE &mdash; APPLY FOR CREDIT, CALCULATE INSTALLMENTS, BROWSE PARTNERED STORES</div>
-  </section>
-
-  <!-- ============ OVERVIEW ============ -->
-  <section data-screen-label="Overview" style="padding:0 40px 96px">
-    <div data-cols="1" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:start">
-      <div data-reveal="1">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#5B3DF5;margin-bottom:18px">00 &mdash; OVERVIEW</div>
-        <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,2.8vw,38px);line-height:1.06;font-weight:400;letter-spacing:-0.035em">Vamax &ndash; Fintech Loan Management Dashboard</h2>
-      </div>
-      <div data-reveal="1" data-reveal-delay="80" style="display:flex;flex-direction:column;gap:22px;max-width:640px">
-        <p style="margin:0;font-size:17px;line-height:1.7;color:#4A463F;text-wrap:pretty">Vamax is a collaborative fintech project completed as part of Ehsan Ezzati's Advanced UI/UX Design course. The project was recognized as one of the top submissions and was later published on the Figma Community.</p>
-        <p style="margin:0;font-size:17px;line-height:1.7;color:#4A463F;text-wrap:pretty">The platform was designed to simplify the management of both short-term and long-term loans, with a primary focus on creating an intuitive and scalable dashboard experience. Users can seamlessly apply for loans, track repayment schedules, purchase products using loan credit, and monitor their financial status through a centralized interface.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHY THE NAME ============ -->
-  <section data-screen-label="Naming" style="padding:0 40px 96px">
-    <div data-cols="1" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
-      <div data-reveal="1">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#5B3DF5;margin-bottom:18px">01 &mdash; THE NAME</div>
-        <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,3.4vw,46px);line-height:1.04;font-weight:400;letter-spacing:-0.035em">Vam, the Persian word for loan. Plus X, the crossing point.</h2>
-        <p style="margin:24px 0 0;font-size:17px;line-height:1.7;color:#4A463F;max-width:480px;text-wrap:pretty">The X stands for the intersection between lenders and the people borrowing from them. Blue carries trust and calm; green carries growth. Nothing in the palette is decorative.</p>
-      </div>
-      <div data-reveal="1" data-reveal-delay="100" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div style="padding:26px;border-radius:14px;background:#1F4FD8;color:#FFF">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:0.7">PRIMARY</div>
-          <div style="font-family:'Archivo Black',sans-serif;font-size:26px;font-weight:400;margin-top:52px">Blue</div>
-          <div style="font-size:14px;opacity:0.8;margin-top:4px">Trust, security, calm</div>
-        </div>
-        <div style="padding:26px;border-radius:14px;background:#1E9E6A;color:#FFF">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:0.7">ACCENT</div>
-          <div style="font-family:'Archivo Black',sans-serif;font-size:26px;font-weight:400;margin-top:52px">Green</div>
-          <div style="font-size:14px;opacity:0.85;margin-top:4px">Growth, prosperity</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROBLEM ============ -->
-  <section data-screen-label="Problem" style="padding:88px 40px;background:#1A1917;color:#FAF9F6">
-    <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#FFD84D;margin-bottom:18px">02 &mdash; THE PROBLEM</div>
-      <h2 data-reveal="1" data-reveal-delay="60" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(34px,4.4vw,64px);line-height:0.98;font-weight:400;letter-spacing:-0.04em;max-width:900px">Buying on credit was slow, opaque, and easy to get wrong.</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;margin-top:52px;background:rgba(250,249,246,0.14);border:1px solid rgba(250,249,246,0.14);border-radius:16px;overflow:hidden">
-        <div data-reveal="1" style="background:#1A1917;padding:32px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:32px;color:#FFD84D">01</div>
-          <div style="margin-top:16px;font-family:'Archivo Black',sans-serif;font-size:20px;font-weight:400">Choosing the wrong credit</div>
-          <p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:rgba(250,249,246,0.62)">Pick badly and you are locked into a repayment that is too long or too expensive.</p>
-        </div>
-        <div data-reveal="1" data-reveal-delay="80" style="background:#1A1917;padding:32px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:32px;color:#FFD84D">02</div>
-          <div style="margin-top:16px;font-family:'Archivo Black',sans-serif;font-size:20px;font-weight:400">Numbers nobody can read</div>
-          <p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:rgba(250,249,246,0.62)">Interest rates, repayment periods, installment amounts. All of it hidden in banking language.</p>
-        </div>
-        <div data-reveal="1" data-reveal-delay="160" style="background:#1A1917;padding:32px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:32px;color:#FFD84D">03</div>
-          <div style="margin-top:16px;font-family:'Archivo Black',sans-serif;font-size:20px;font-weight:400">Two kinds of shopper</div>
-          <p style="margin:10px 0 0;font-size:15px;line-height:1.65;color:rgba(250,249,246,0.62)">Some want to buy online. Some want to walk into the store. The product had to serve both.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SOLUTIONS ============ -->
-  <section data-screen-label="Solutions" style="padding:96px 40px 0;background-image:radial-gradient(#D9D3C7 1.15px,transparent 1.15px);background-size:26px 26px">
-    <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#5B3DF5;margin-bottom:18px">03 &mdash; WHAT I DESIGNED</div>
-      <h2 data-reveal="1" data-reveal-delay="60" style="margin:0 0 60px;font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4vw,56px);line-height:1;font-weight:400;letter-spacing:-0.04em;max-width:760px">Three decisions, each removing one thing to think about.</h2>
-
-      <div style="display:flex;flex-direction:column;gap:80px;padding-bottom:96px">
-        <div data-reveal="1" data-cols="1" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:52px;align-items:center">
-          <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A857C;margin-bottom:14px">SOLUTION 01</div>
-            <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,2.6vw,36px);line-height:1.08;font-weight:400;letter-spacing:-0.025em">Two credit cards you can compare at a glance</h3>
-            <p style="margin:18px 0 0;font-size:16px;line-height:1.7;color:#4A463F;text-wrap:pretty">Short-term and long-term, side by side, in the same visual language. The choice becomes a comparison instead of a calculation.</p>
-          </div>
-          <div style="border-radius:16px;border:1px solid #DCD5F2;background:#F6F4FE;overflow:hidden;box-shadow:0 30px 56px -30px rgba(91,61,245,0.3)">
-            <img src="assets/vamax-credit-choice.png" alt="Choosing between short-term and long-term credit" style="width:100%;display:block">
-          </div>
-        </div>
-
-        <div data-reveal="1" data-cols="1" data-flip="1" style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:52px;align-items:center">
-          <div style="border-radius:16px;border:1px solid #C9E4D6;background:#F4FBF7;overflow:hidden;box-shadow:0 30px 56px -30px rgba(30,158,106,0.28)">
-            <img src="assets/vamax-installments.png" alt="Installment management screen" style="width:100%;display:block">
-          </div>
-          <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A857C;margin-bottom:14px">SOLUTION 02</div>
-            <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,2.6vw,36px);line-height:1.08;font-weight:400;letter-spacing:-0.025em">Every installment, its date, and its late fee</h3>
-            <p style="margin:18px 0 0;font-size:16px;line-height:1.7;color:#4A463F;text-wrap:pretty">Repayment lives in one list: which credit it belongs to, how many installments are left, days remaining or days overdue, and the penalty being charged. Settling everything at once is one button away.</p>
-          </div>
-        </div>
-
-        <div data-reveal="1" data-cols="1" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:52px;align-items:center">
-          <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A857C;margin-bottom:14px">SOLUTION 03</div>
-            <h3 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(26px,2.6vw,36px);line-height:1.08;font-weight:400;letter-spacing:-0.025em">Online and in-store, in one Stores section</h3>
-            <p style="margin:18px 0 0;font-size:16px;line-height:1.7;color:#4A463F;text-wrap:pretty">Partnered merchants appear together with the way you can buy from them, so the shopping habit never forces a detour.</p>
-          </div>
-          <div style="border-radius:16px;border:1px solid #E0DBD1;background:#EFECE4;overflow:hidden;box-shadow:0 30px 56px -30px rgba(26,25,23,0.24)">
-            <img src="assets/vamax-stores.png" alt="Short-term credit detail with partnered stores" style="width:100%;display:block">
+      <div
+        style="
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          backdrop-filter: blur(10px);
+          background: rgba(250, 249, 246, 0.82);
+          border-bottom: 1px solid #e4dfd5;
+        "
+      >
+        <div
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <a
+            href="index.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 11px;
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              color: #5f5b54;
+            "
+            >&larr; FATEMEH BEHBOODIAN</a
+          >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 26px;
+              font-size: 14px;
+              font-weight: 500;
+            "
+          >
+            <a href="index.html#work">Work</a>
+            <a
+              href="index.html#contact"
+              style="
+                background: #1a1917;
+                color: #faf9f6;
+                padding: 8px 17px;
+                border-radius: 999px;
+              "
+              >Contact</a
+            >
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ MORE SCREENS ============ -->
-  <section data-screen-label="More screens" style="padding:0 40px 96px">
-    <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#5B3DF5;margin-bottom:18px">MORE SCREENS</div>
-      <h2 data-reveal="1" data-reveal-delay="60" style="margin:0 0 44px;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,3.2vw,42px);line-height:1.05;font-weight:400;letter-spacing:-0.035em;max-width:760px">The rest of the dashboard, built to the same system.</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px">
-        <div data-reveal="1" style="border-radius:16px;border:1px solid #E4DFD5;background:#EFECE4;overflow:hidden">
-          <img src="assets/vamax-transactions.png" alt="Transactions history" style="width:100%;display:block">
-          <div style="padding:16px 20px;font-size:14px;color:#4A463F">Transaction history &mdash; every payment, top-up and fee, filterable by type and status</div>
-        </div>
-        <div data-reveal="1" data-reveal-delay="60" style="border-radius:16px;border:1px solid #E4DFD5;background:#EFECE4;overflow:hidden">
-          <img src="assets/vamax-request-status.png" alt="Credit request status" style="width:100%;display:block">
-          <div style="padding:16px 20px;font-size:14px;color:#4A463F">Request status &mdash; track every credit application from submission to activation</div>
-        </div>
-        <div data-reveal="1" data-reveal-delay="120" style="border-radius:16px;border:1px solid #E4DFD5;background:#EFECE4;overflow:hidden">
-          <img src="assets/vamax-validation.png" alt="Credit score and validation details" style="width:100%;display:block">
-          <div style="padding:16px 20px;font-size:14px;color:#4A463F">Validation result &mdash; the credit score explained, with the factors behind it</div>
-        </div>
-        <div data-reveal="1" style="border-radius:16px;border:1px solid #E4DFD5;background:#EFECE4;overflow:hidden">
-          <img src="assets/vamax-profile.png" alt="Profile page" style="width:100%;display:block">
-          <div style="padding:16px 20px;font-size:14px;color:#4A463F">Profile &mdash; identity, residence and employment information in one editable form</div>
-        </div>
-        <div data-reveal="1" data-reveal-delay="60" style="border-radius:16px;border:1px solid #E4DFD5;background:#EFECE4;overflow:hidden;grid-column:span 2">
-          <img src="assets/vamax-installments-2.png" alt="Installment management, full list" style="width:100%;display:block">
-          <div style="padding:16px 20px;font-size:14px;color:#4A463F">Installment management &mdash; every installment across all active credits, with due dates and one-tap settlement</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTRIBUTIONS ============ -->
-  <section data-screen-label="Contributions" style="padding:88px 40px;background:#1A1917;color:#FAF9F6">
-    <div data-cols="1" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
-      <div data-reveal="1">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#FFD84D;margin-bottom:20px">MY CONTRIBUTIONS</div>
-        <div style="display:flex;flex-direction:column">
-          <div style="padding:16px 0;border-top:1px solid rgba(250,249,246,0.16);font-size:17px">Dashboard UI/UX design</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(250,249,246,0.16);font-size:17px">Loan management and repayment flows</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(250,249,246,0.16);font-size:17px">Product purchase with loan credit</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(250,249,246,0.16);font-size:17px">Wireframing and user flow refinement</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(250,249,246,0.16);font-size:17px">Interactive prototyping</div>
-          <div style="padding:16px 0;border-top:1px solid rgba(250,249,246,0.16);border-bottom:1px solid rgba(250,249,246,0.16);font-size:17px">Design system implementation</div>
-        </div>
-      </div>
-      <div data-reveal="1" data-reveal-delay="100">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#FFD84D;margin-bottom:20px">DESIGN HIGHLIGHTS</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
-          <div style="padding:22px;border-radius:14px;background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.14);font-size:16px;line-height:1.5">Fully interactive high-fidelity prototype</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.14);font-size:16px;line-height:1.5">50+ reusable components</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.14);font-size:16px;line-height:1.5">Organized Color Styles and design tokens</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.14);font-size:16px;line-height:1.5">Extensive use of Auto Layout for scalability</div>
-          <div style="padding:22px;border-radius:14px;background:rgba(250,249,246,0.06);border:1px solid rgba(250,249,246,0.14);font-size:16px;line-height:1.5">Consistent design system for maintainability and future development</div>
-        </div>
-        <p style="margin:28px 0 0;font-size:17px;line-height:1.7;color:rgba(250,249,246,0.7);text-wrap:pretty">This project strengthened my experience in designing complex financial products, building scalable UI systems, and creating user-centered experiences for data-heavy dashboards.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PRINCIPLES ============ -->
-  <section data-screen-label="Principles" style="padding:88px 40px;border-top:1px solid #E4DFD5">
-    <div data-cols="1" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:start">
-      <div data-reveal="1">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#5B3DF5;margin-bottom:18px">04 &mdash; WHAT GUIDED IT</div>
-        <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,3.2vw,42px);line-height:1.05;font-weight:400;letter-spacing:-0.035em">Money is emotional. The interface should be boring.</h2>
-        <div style="margin-top:26px;width:210px;padding:18px;background:#FFD84D;border-radius:3px;box-shadow:0 14px 26px -14px rgba(26,25,23,0.3);animation:bobA 7.5s ease-in-out infinite">
-          <div style="font-size:14px;line-height:1.45;color:#2A2205">Every screen answers one question and then gets out of the way.</div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:0">
-        <div data-reveal="1" style="padding:26px 0;border-top:1px solid #E4DFD5;display:grid;grid-template-columns:34px 1fr;gap:22px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A39D92">A</div>
-          <div><div style="font-family:'Archivo Black',sans-serif;font-size:21px;font-weight:400">Build trust visually</div><p style="margin:8px 0 0;font-size:16px;line-height:1.65;color:#6E6A63">Consistent structure, generous spacing, no surprises between steps.</p></div>
-        </div>
-        <div data-reveal="1" style="padding:26px 0;border-top:1px solid #E4DFD5;display:grid;grid-template-columns:34px 1fr;gap:22px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A39D92">B</div>
-          <div><div style="font-family:'Archivo Black',sans-serif;font-size:21px;font-weight:400">Show the whole number</div><p style="margin:8px 0 0;font-size:16px;line-height:1.65;color:#6E6A63">Totals, fees and dates stated plainly, at the moment of the decision.</p></div>
-        </div>
-        <div data-reveal="1" style="padding:26px 0;border-top:1px solid #E4DFD5;display:grid;grid-template-columns:34px 1fr;gap:22px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A39D92">C</div>
-          <div><div style="font-family:'Archivo Black',sans-serif;font-size:21px;font-weight:400">Cut the mental load</div><p style="margin:8px 0 0;font-size:16px;line-height:1.65;color:#6E6A63">High readability over density. Fewer choices per screen, better labels.</p></div>
-        </div>
-        <div data-reveal="1" style="padding:26px 0;border-top:1px solid #E4DFD5;border-bottom:1px solid #E4DFD5;display:grid;grid-template-columns:34px 1fr;gap:22px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A39D92">D</div>
-          <div><div style="font-family:'Archivo Black',sans-serif;font-size:21px;font-weight:400">Hand off cleanly</div><p style="margin:8px 0 0;font-size:16px;line-height:1.65;color:#6E6A63">Organised components and ready-to-use pages, published for other designers.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SYSTEM ============ -->
-  <section data-screen-label="System" style="padding:0 40px 96px">
-    <div data-reveal="1" style="max-width:1180px;margin:0 auto;border-radius:18px;border:1px solid #E4DFD5;background:#EFECE4;padding:44px;position:relative;overflow:hidden">
-      <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:baseline">
-        <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#8A857C;margin-bottom:14px">05 &mdash; THE FILE</div>
-          <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,3vw,40px);line-height:1.05;font-weight:400;letter-spacing:-0.035em;max-width:560px">Published free, so other designers can take it apart.</h2>
-          <p style="margin:18px 0 0;font-size:16px;line-height:1.7;color:#4A463F;max-width:520px;text-wrap:pretty">Components organised, pages ready to use. 300+ designers have opened it on Figma Community.</p>
-          <a href="https://www.figma.com/community/file/1637424078757435293/vamax-fintech-dashboard" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:#1A1917;color:#FAF9F6;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:500">Open on Figma Community &rarr;</a>
-        </div>
-        <div style="display:flex;gap:14px">
-          <div style="width:150px;padding:16px;background:#C9E8D5;border-radius:3px;box-shadow:0 14px 26px -14px rgba(26,25,23,0.28);animation:bobB 8s ease-in-out infinite">
-            <div style="font-size:13px;line-height:1.45;color:#123024">22 saves and counting</div>
+      <!-- ============ TITLE ============ -->
+      <section
+        data-screen-label="Case study title"
+        style="
+          padding: 88px 40px 64px;
+          background-image: radial-gradient(#d9d3c7 1.15px, transparent 1.15px);
+          background-size: 26px 26px;
+        "
+      >
+        <div style="max-width: 1180px; margin: 0 auto">
+          <div
+            data-reveal="1"
+            style="
+              display: flex;
+              gap: 12px;
+              flex-wrap: wrap;
+              margin-bottom: 26px;
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 11px;
+            "
+          >
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                background: #5b3df5;
+                color: #faf9f6;
+              "
+            >
+              CASE STUDY
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              FINTECH
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              DASHBOARD
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid #d6d0c4;
+                color: #5f5b54;
+              "
+            >
+              2026
+            </div>
+          </div>
+          <h1
+            data-reveal="1"
+            data-reveal-delay="80"
+            style="
+              margin: 0;
+              font-family: &quot;Archivo Black&quot;, sans-serif;
+              font-size: clamp(48px, 7vw, 110px);
+              line-height: 0.92;
+              font-weight: 400;
+              letter-spacing: -0.045em;
+            "
+          >
+            Vamax
+          </h1>
+          <p
+            data-reveal="1"
+            data-reveal-delay="140"
+            style="
+              margin: 28px 0 0;
+              font-size: clamp(19px, 2vw, 26px);
+              line-height: 1.45;
+              color: #4a463f;
+              max-width: 720px;
+              text-wrap: pretty;
+            "
+          >
+            A credit and installment dashboard for people who cannot calculate
+            an interest rate, and should not have to.
+          </p>
+          <div
+            data-reveal="1"
+            data-reveal-delay="220"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+              gap: 28px;
+              margin-top: 56px;
+              padding-top: 28px;
+              border-top: 1px solid #e4dfd5;
+            "
+          >
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.14em;
+                  color: #8a857c;
+                  margin-bottom: 7px;
+                "
+              >
+                ROLE
+              </div>
+              <div style="font-size: 16px">UI/UX design, end to end</div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.14em;
+                  color: #8a857c;
+                  margin-bottom: 7px;
+                "
+              >
+                CONTEXT
+              </div>
+              <div style="font-size: 16px">
+                Ehsan Ezzati's Advanced UI/UX course, team project
+              </div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.14em;
+                  color: #8a857c;
+                  margin-bottom: 7px;
+                "
+              >
+                OUTPUT
+              </div>
+              <div style="font-size: 16px">Dashboard, components, pages</div>
+            </div>
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  letter-spacing: 0.14em;
+                  color: #8a857c;
+                  margin-bottom: 7px;
+                "
+              >
+                PUBLISHED
+              </div>
+              <div style="font-size: 16px">Free on Figma Community</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:40px">
-        <div style="height:200px;border-radius:12px;border:1px solid #DCD5F2;background:#F4F1FD;overflow:hidden"><img src="assets/vamax-credit-choice.png" alt="Credit selection" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></div>
-        <div style="height:200px;border-radius:12px;border:1px solid #DCD5F2;background:#F4F1FD;overflow:hidden"><img src="assets/vamax-installments.png" alt="Installments" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></div>
-        <div style="height:200px;border-radius:12px;border:1px solid #DCD5F2;background:#F4F1FD;overflow:hidden"><img src="assets/vamax-stores.png" alt="Stores" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></div>
-        <div style="height:200px;border-radius:12px;border:1.5px dashed #CFC9BD;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:#A39D92;text-align:center;line-height:1.7">ADD MORE<br>FRAMES</div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ============ NEXT / CTA ============ -->
-  <section data-screen-label="Next" style="padding:88px 40px 40px;background:#1A1917;color:#FAF9F6">
-    <div style="max-width:1180px;margin:0 auto">
-      <div data-reveal="1" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#FFD84D;margin-bottom:20px">NEXT</div>
-      <h2 data-reveal="1" data-reveal-delay="60" style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(34px,4.4vw,62px);line-height:0.98;font-weight:400;letter-spacing:-0.04em;max-width:780px">Want the rest of the work, or a conversation?</h2>
-      <div data-reveal="1" data-reveal-delay="140" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:34px">
-        <a href="index.html#work" style="background:#FFD84D;color:#1A1917;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:600">Back to all work</a>
-        <a href="index.html#contact" style="border:1.5px solid rgba(250,249,246,0.3);color:#FAF9F6;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:500">Get in touch</a>
-      </div>
-      <div style="margin-top:72px;padding-top:26px;border-top:1px solid rgba(250,249,246,0.14);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(250,249,246,0.44)">
-        <div>FATEMEH BEHBOODIAN &middot; VAMAX CASE STUDY</div>
-        <a href="index.html" style="color:rgba(250,249,246,0.44)">HOME &uarr;</a>
-      </div>
-    </div>
-  </section>
-</div>
+      <!-- ============ HERO SHOT ============ -->
+      <section style="padding: 0 40px 84px">
+        <div
+          data-reveal="1"
+          style="
+            max-width: 702px;
+            margin: 0 auto;
+            border-radius: 18px;
+            border: 1px solid #dcd5f2;
+            background: #f6f4fe;
+            overflow: hidden;
+            box-shadow: 0 40px 70px -40px rgba(91, 61, 245, 0.34);
+          "
+        >
+          <img
+            src="assets/vamax-landing.png"
+            style="object-fit: cover; width: 100%"
+            alt="Vamax landing page"
+          />
+        </div>
+        <div
+          style="
+            max-width: 702px;
+            margin: 10px auto 0;
+            font-family: &quot;JetBrains Mono&quot;, monospace;
+            font-size: 11px;
+            color: #8a857c;
+          "
+        >
+          LANDING PAGE &mdash; APPLY FOR CREDIT, CALCULATE INSTALLMENTS, BROWSE
+          PARTNERED STORES
+        </div>
+      </section>
 
-<script src="js/site.js"></script>
-</body>
+      <!-- ============ OVERVIEW ============ -->
+      <section data-screen-label="Overview" style="padding: 0 40px 96px">
+        <div
+          data-cols="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 56px;
+            align-items: start;
+          "
+        >
+          <div data-reveal="1">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #5b3df5;
+                margin-bottom: 18px;
+              "
+            >
+              00 &mdash; OVERVIEW
+            </div>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Archivo Black&quot;, sans-serif;
+                font-size: clamp(26px, 2.8vw, 38px);
+                line-height: 1.06;
+                font-weight: 400;
+                letter-spacing: -0.035em;
+              "
+            >
+              Vamax &ndash; Fintech Loan Management Dashboard
+            </h2>
+          </div>
+          <div
+            data-reveal="1"
+            data-reveal-delay="80"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 22px;
+              max-width: 640px;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-size: 17px;
+                line-height: 1.7;
+                color: #4a463f;
+                text-wrap: pretty;
+              "
+            >
+              Vamax is a collaborative fintech project completed as part of
+              Ehsan Ezzati's Advanced UI/UX Design course. The project was
+              recognized as one of the top submissions and was later published
+              on the Figma Community.
+            </p>
+            <p
+              style="
+                margin: 0;
+                font-size: 17px;
+                line-height: 1.7;
+                color: #4a463f;
+                text-wrap: pretty;
+              "
+            >
+              The platform was designed to simplify the management of both
+              short-term and long-term loans, with a primary focus on creating
+              an intuitive and scalable dashboard experience. Users can
+              seamlessly apply for loans, track repayment schedules, purchase
+              products using loan credit, and monitor their financial status
+              through a centralized interface.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WHY THE NAME ============ -->
+      <section data-screen-label="Naming" style="padding: 0 40px 96px">
+        <div
+          data-cols="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+          "
+        >
+          <div data-reveal="1">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #5b3df5;
+                margin-bottom: 18px;
+              "
+            >
+              01 &mdash; THE NAME
+            </div>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Archivo Black&quot;, sans-serif;
+                font-size: clamp(30px, 3.4vw, 46px);
+                line-height: 1.04;
+                font-weight: 400;
+                letter-spacing: -0.035em;
+              "
+            >
+              Vam, the Persian word for loan. Plus X, the crossing point.
+            </h2>
+            <p
+              style="
+                margin: 24px 0 0;
+                font-size: 17px;
+                line-height: 1.7;
+                color: #4a463f;
+                max-width: 480px;
+                text-wrap: pretty;
+              "
+            >
+              The X stands for the intersection between lenders and the people
+              borrowing from them. Blue carries trust and calm; green carries
+              growth. Nothing in the palette is decorative.
+            </p>
+          </div>
+          <div
+            data-reveal="1"
+            data-reveal-delay="100"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px"
+          >
+            <div
+              style="
+                padding: 26px;
+                border-radius: 14px;
+                background: #1f4fd8;
+                color: #fff;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  opacity: 0.7;
+                "
+              >
+                PRIMARY
+              </div>
+              <div
+                style="
+                  font-family: &quot;Archivo Black&quot;, sans-serif;
+                  font-size: 26px;
+                  font-weight: 400;
+                  margin-top: 52px;
+                "
+              >
+                Blue
+              </div>
+              <div style="font-size: 14px; opacity: 0.8; margin-top: 4px">
+                Trust, security, calm
+              </div>
+            </div>
+            <div
+              style="
+                padding: 26px;
+                border-radius: 14px;
+                background: #1e9e6a;
+                color: #fff;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 11px;
+                  opacity: 0.7;
+                "
+              >
+                ACCENT
+              </div>
+              <div
+                style="
+                  font-family: &quot;Archivo Black&quot;, sans-serif;
+                  font-size: 26px;
+                  font-weight: 400;
+                  margin-top: 52px;
+                "
+              >
+                Green
+              </div>
+              <div style="font-size: 14px; opacity: 0.85; margin-top: 4px">
+                Growth, prosperity
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROBLEM ============ -->
+      <section
+        data-screen-label="Problem"
+        style="padding: 88px 40px; background: #1a1917; color: #faf9f6"
+      >
+        <div style="max-width: 1180px; margin: 0 auto">
+          <div
+            data-reveal="1"
+            style="
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              letter-spacing: 0.16em;
+              color: #ffd84d;
+              margin-bottom: 18px;
+            "
+          >
+            02 &mdash; THE PROBLEM
+          </div>
+          <h2
+            data-reveal="1"
+            data-reveal-delay="60"
+            style="
+              margin: 0;
+              font-family: &quot;Archivo Black&quot;, sans-serif;
+              font-size: clamp(34px, 4.4vw, 64px);
+              line-height: 0.98;
+              font-weight: 400;
+              letter-spacing: -0.04em;
+              max-width: 900px;
+            "
+          >
+            Buying on credit was slow, opaque, and easy to get wrong.
+          </h2>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 2px;
+              margin-top: 52px;
+              background: rgba(250, 249, 246, 0.14);
+              border: 1px solid rgba(250, 249, 246, 0.14);
+              border-radius: 16px;
+              overflow: hidden;
+            "
+          >
+            <div data-reveal="1" style="background: #1a1917; padding: 32px">
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 32px;
+                  color: #ffd84d;
+                "
+              >
+                01
+              </div>
+              <div
+                style="
+                  margin-top: 16px;
+                  font-family: &quot;Archivo Black&quot;, sans-serif;
+                  font-size: 20px;
+                  font-weight: 400;
+                "
+              >
+                Choosing the wrong credit
+              </div>
+              <p
+                style="
+                  margin: 10px 0 0;
+                  font-size: 15px;
+                  line-height: 1.65;
+                  color: rgba(250, 249, 246, 0.62);
+                "
+              >
+                Pick badly and you are locked into a repayment that is too long
+                or too expensive.
+              </p>
+            </div>
+            <div
+              data-reveal="1"
+              data-reveal-delay="80"
+              style="background: #1a1917; padding: 32px"
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 32px;
+                  color: #ffd84d;
+                "
+              >
+                02
+              </div>
+              <div
+                style="
+                  margin-top: 16px;
+                  font-family: &quot;Archivo Black&quot;, sans-serif;
+                  font-size: 20px;
+                  font-weight: 400;
+                "
+              >
+                Numbers nobody can read
+              </div>
+              <p
+                style="
+                  margin: 10px 0 0;
+                  font-size: 15px;
+                  line-height: 1.65;
+                  color: rgba(250, 249, 246, 0.62);
+                "
+              >
+                Interest rates, repayment periods, installment amounts. All of
+                it hidden in banking language.
+              </p>
+            </div>
+            <div
+              data-reveal="1"
+              data-reveal-delay="160"
+              style="background: #1a1917; padding: 32px"
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 32px;
+                  color: #ffd84d;
+                "
+              >
+                03
+              </div>
+              <div
+                style="
+                  margin-top: 16px;
+                  font-family: &quot;Archivo Black&quot;, sans-serif;
+                  font-size: 20px;
+                  font-weight: 400;
+                "
+              >
+                Two kinds of shopper
+              </div>
+              <p
+                style="
+                  margin: 10px 0 0;
+                  font-size: 15px;
+                  line-height: 1.65;
+                  color: rgba(250, 249, 246, 0.62);
+                "
+              >
+                Some want to buy online. Some want to walk into the store. The
+                product had to serve both.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SOLUTIONS ============ -->
+      <section
+        data-screen-label="Solutions"
+        style="
+          padding: 96px 40px 0;
+          background-image: radial-gradient(#d9d3c7 1.15px, transparent 1.15px);
+          background-size: 26px 26px;
+        "
+      >
+        <div style="max-width: 1180px; margin: 0 auto">
+          <div
+            data-reveal="1"
+            style="
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              letter-spacing: 0.16em;
+              color: #5b3df5;
+              margin-bottom: 18px;
+            "
+          >
+            03 &mdash; WHAT I DESIGNED
+          </div>
+          <h2
+            data-reveal="1"
+            data-reveal-delay="60"
+            style="
+              margin: 0 0 60px;
+              font-family: &quot;Archivo Black&quot;, sans-serif;
+              font-size: clamp(32px, 4vw, 56px);
+              line-height: 1;
+              font-weight: 400;
+              letter-spacing: -0.04em;
+              max-width: 760px;
+            "
+          >
+            Three decisions, each removing one thing to think about.
+          </h2>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 80px;
+              padding-bottom: 96px;
+            "
+          >
+            <div
+              data-reveal="1"
+              data-cols="1"
+              style="
+                display: grid;
+                grid-template-columns: 0.85fr 1.15fr;
+                gap: 52px;
+                align-items: center;
+              "
+            >
+              <div>
+                <div
+                  style="
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    font-size: 12px;
+                    color: #8a857c;
+                    margin-bottom: 14px;
+                  "
+                >
+                  SOLUTION 01
+                </div>
+                <h3
+                  style="
+                    margin: 0;
+                    font-family: &quot;Archivo Black&quot;, sans-serif;
+                    font-size: clamp(26px, 2.6vw, 36px);
+                    line-height: 1.08;
+                    font-weight: 400;
+                    letter-spacing: -0.025em;
+                  "
+                >
+                  Two credit cards you can compare at a glance
+                </h3>
+                <p
+                  style="
+                    margin: 18px 0 0;
+                    font-size: 16px;
+                    line-height: 1.7;
+                    color: #4a463f;
+                    text-wrap: pretty;
+                  "
+                >
+                  Short-term and long-term, side by side, in the same visual
+                  language. The choice becomes a comparison instead of a
+                  calculation.
+                </p>
+              </div>
+              <div
+                style="
+                  border-radius: 16px;
+                  border: 1px solid #dcd5f2;
+                  background: #f6f4fe;
+                  overflow: hidden;
+                  box-shadow: 0 30px 56px -30px rgba(91, 61, 245, 0.3);
+                "
+              >
+                <img
+                  src="assets/vamax-credit-choice.png"
+                  alt="Choosing between short-term and long-term credit"
+                  style="width: 100%; display: block"
+                />
+              </div>
+            </div>
+
+            <div
+              data-reveal="1"
+              data-cols="1"
+              data-flip="1"
+              style="
+                display: grid;
+                grid-template-columns: 1.15fr 0.85fr;
+                gap: 52px;
+                align-items: center;
+              "
+            >
+              <div
+                style="
+                  border-radius: 16px;
+                  border: 1px solid #c9e4d6;
+                  background: #f4fbf7;
+                  overflow: hidden;
+                  box-shadow: 0 30px 56px -30px rgba(30, 158, 106, 0.28);
+                "
+              >
+                <img
+                  src="assets/vamax-installments.png"
+                  alt="Installment management screen"
+                  style="width: 100%; display: block"
+                />
+              </div>
+              <div>
+                <div
+                  style="
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    font-size: 12px;
+                    color: #8a857c;
+                    margin-bottom: 14px;
+                  "
+                >
+                  SOLUTION 02
+                </div>
+                <h3
+                  style="
+                    margin: 0;
+                    font-family: &quot;Archivo Black&quot;, sans-serif;
+                    font-size: clamp(26px, 2.6vw, 36px);
+                    line-height: 1.08;
+                    font-weight: 400;
+                    letter-spacing: -0.025em;
+                  "
+                >
+                  Every installment, its date, and its late fee
+                </h3>
+                <p
+                  style="
+                    margin: 18px 0 0;
+                    font-size: 16px;
+                    line-height: 1.7;
+                    color: #4a463f;
+                    text-wrap: pretty;
+                  "
+                >
+                  Repayment lives in one list: which credit it belongs to, how
+                  many installments are left, days remaining or days overdue,
+                  and the penalty being charged. Settling everything at once is
+                  one button away.
+                </p>
+              </div>
+            </div>
+
+            <div
+              data-reveal="1"
+              data-cols="1"
+              style="
+                display: grid;
+                grid-template-columns: 0.85fr 1.15fr;
+                gap: 52px;
+                align-items: center;
+              "
+            >
+              <div>
+                <div
+                  style="
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    font-size: 12px;
+                    color: #8a857c;
+                    margin-bottom: 14px;
+                  "
+                >
+                  SOLUTION 03
+                </div>
+                <h3
+                  style="
+                    margin: 0;
+                    font-family: &quot;Archivo Black&quot;, sans-serif;
+                    font-size: clamp(26px, 2.6vw, 36px);
+                    line-height: 1.08;
+                    font-weight: 400;
+                    letter-spacing: -0.025em;
+                  "
+                >
+                  Online and in-store, in one Stores section
+                </h3>
+                <p
+                  style="
+                    margin: 18px 0 0;
+                    font-size: 16px;
+                    line-height: 1.7;
+                    color: #4a463f;
+                    text-wrap: pretty;
+                  "
+                >
+                  Partnered merchants appear together with the way you can buy
+                  from them, so the shopping habit never forces a detour.
+                </p>
+              </div>
+              <div
+                style="
+                  border-radius: 16px;
+                  border: 1px solid #e0dbd1;
+                  background: #efece4;
+                  overflow: hidden;
+                  box-shadow: 0 30px 56px -30px rgba(26, 25, 23, 0.24);
+                "
+              >
+                <img
+                  src="assets/vamax-stores.png"
+                  alt="Short-term credit detail with partnered stores"
+                  style="width: 100%; display: block"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MORE SCREENS ============ -->
+      <section data-screen-label="More screens" style="padding: 0 40px 96px">
+        <div style="max-width: 1180px; margin: 0 auto">
+          <div
+            data-reveal="1"
+            style="
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              letter-spacing: 0.16em;
+              color: #5b3df5;
+              margin-bottom: 18px;
+            "
+          >
+            MORE SCREENS
+          </div>
+          <h2
+            data-reveal="1"
+            data-reveal-delay="60"
+            style="
+              margin: 0 0 44px;
+              font-family: &quot;Archivo Black&quot;, sans-serif;
+              font-size: clamp(28px, 3.2vw, 42px);
+              line-height: 1.05;
+              font-weight: 400;
+              letter-spacing: -0.035em;
+              max-width: 760px;
+            "
+          >
+            The rest of the dashboard, built to the same system.
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 22px">
+            <div
+              data-cols="1"
+              style="
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+                align-items: start;
+              "
+            >
+              <div
+                data-reveal="1"
+                style="
+                  border-radius: 16px;
+                  border: 1px solid #e4dfd5;
+                  background: #efece4;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="assets/vamax-transactions.png"
+                  alt="Transactions history"
+                  style="width: 100%; display: block"
+                />
+                <div
+                  style="padding: 16px 20px; font-size: 14px; color: #4a463f"
+                >
+                  Transaction history &mdash; every payment, top-up and fee,
+                  filterable by type and status
+                </div>
+              </div>
+              <div
+                data-reveal="1"
+                data-reveal-delay="60"
+                style="
+                  border-radius: 16px;
+                  border: 1px solid #e4dfd5;
+                  background: #efece4;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="assets/vamax-request-status.png"
+                  alt="Credit request status"
+                  style="width: 100%; display: block"
+                />
+                <div
+                  style="padding: 16px 20px; font-size: 14px; color: #4a463f"
+                >
+                  Request status &mdash; track every credit application from
+                  submission to activation
+                </div>
+              </div>
+              <div
+                data-reveal="1"
+                style="
+                  border-radius: 16px;
+                  border: 1px solid #e4dfd5;
+                  background: #efece4;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="assets/vamax-profile.png"
+                  alt="Profile page"
+                  style="width: 100%; display: block"
+                />
+                <div
+                  style="padding: 16px 20px; font-size: 14px; color: #4a463f"
+                >
+                  Profile &mdash; identity, residence and employment information
+                  in one editable form
+                </div>
+              </div>
+              <div
+                data-reveal="1"
+                data-reveal-delay="120"
+                style="
+                  border-radius: 16px;
+                  border: 1px solid #e4dfd5;
+                  background: #efece4;
+                  overflow: hidden;
+                "
+              >
+                <img
+                  src="assets/vamax-validation.png"
+                  alt="Credit score and validation details"
+                  style="width: 100%; display: block"
+                />
+                <div
+                  style="padding: 16px 20px; font-size: 14px; color: #4a463f"
+                >
+                  Validation result &mdash; the credit score explained, with the
+                  factors behind it
+                </div>
+              </div>
+            </div>
+            <div
+              data-reveal="1"
+              data-reveal-delay="60"
+              style="
+                border-radius: 16px;
+                border: 1px solid #e4dfd5;
+                background: #efece4;
+                overflow: hidden;
+              "
+            >
+              <img
+                src="assets/vamax-installments-2.png"
+                alt="Installment management, full list"
+                style="width: 100%; display: block"
+              />
+              <div style="padding: 16px 20px; font-size: 14px; color: #4a463f">
+                Installment management &mdash; every installment across all
+                active credits, with due dates and one-tap settlement
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTRIBUTIONS ============ -->
+      <section
+        data-screen-label="Contributions"
+        style="padding: 88px 40px; background: #1a1917; color: #faf9f6"
+      >
+        <div
+          data-cols="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+          "
+        >
+          <div data-reveal="1">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #ffd84d;
+                margin-bottom: 20px;
+              "
+            >
+              MY CONTRIBUTIONS
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(250, 249, 246, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Dashboard UI/UX design
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(250, 249, 246, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Loan management and repayment flows
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(250, 249, 246, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Product purchase with loan credit
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(250, 249, 246, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Wireframing and user flow refinement
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(250, 249, 246, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Interactive prototyping
+              </div>
+              <div
+                style="
+                  padding: 16px 0;
+                  border-top: 1px solid rgba(250, 249, 246, 0.16);
+                  border-bottom: 1px solid rgba(250, 249, 246, 0.16);
+                  font-size: 17px;
+                "
+              >
+                Design system implementation
+              </div>
+            </div>
+          </div>
+          <div data-reveal="1" data-reveal-delay="100">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #ffd84d;
+                margin-bottom: 20px;
+              "
+            >
+              DESIGN HIGHLIGHTS
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 14px;
+              "
+            >
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(250, 249, 246, 0.06);
+                  border: 1px solid rgba(250, 249, 246, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Fully interactive high-fidelity prototype
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(250, 249, 246, 0.06);
+                  border: 1px solid rgba(250, 249, 246, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                50+ reusable components
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(250, 249, 246, 0.06);
+                  border: 1px solid rgba(250, 249, 246, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Organized Color Styles and design tokens
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(250, 249, 246, 0.06);
+                  border: 1px solid rgba(250, 249, 246, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Extensive use of Auto Layout for scalability
+              </div>
+              <div
+                style="
+                  padding: 22px;
+                  border-radius: 14px;
+                  background: rgba(250, 249, 246, 0.06);
+                  border: 1px solid rgba(250, 249, 246, 0.14);
+                  font-size: 16px;
+                  line-height: 1.5;
+                "
+              >
+                Consistent design system for maintainability and future
+                development
+              </div>
+            </div>
+            <p
+              style="
+                margin: 28px 0 0;
+                font-size: 17px;
+                line-height: 1.7;
+                color: rgba(250, 249, 246, 0.7);
+                text-wrap: pretty;
+              "
+            >
+              This project strengthened my experience in designing complex
+              financial products, building scalable UI systems, and creating
+              user-centered experiences for data-heavy dashboards.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PRINCIPLES ============ -->
+      <section
+        data-screen-label="Principles"
+        style="padding: 88px 40px; border-top: 1px solid #e4dfd5"
+      >
+        <div
+          data-cols="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 56px;
+            align-items: start;
+          "
+        >
+          <div data-reveal="1">
+            <div
+              style="
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                color: #5b3df5;
+                margin-bottom: 18px;
+              "
+            >
+              04 &mdash; WHAT GUIDED IT
+            </div>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Archivo Black&quot;, sans-serif;
+                font-size: clamp(28px, 3.2vw, 42px);
+                line-height: 1.05;
+                font-weight: 400;
+                letter-spacing: -0.035em;
+              "
+            >
+              Money is emotional. The interface should be boring.
+            </h2>
+            <div
+              style="
+                margin-top: 26px;
+                width: 210px;
+                padding: 18px;
+                background: #ffd84d;
+                border-radius: 3px;
+                box-shadow: 0 14px 26px -14px rgba(26, 25, 23, 0.3);
+                animation: bobA 7.5s ease-in-out infinite;
+              "
+            >
+              <div style="font-size: 14px; line-height: 1.45; color: #2a2205">
+                Every screen answers one question and then gets out of the way.
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0">
+            <div
+              data-reveal="1"
+              style="
+                padding: 26px 0;
+                border-top: 1px solid #e4dfd5;
+                display: grid;
+                grid-template-columns: 34px 1fr;
+                gap: 22px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 13px;
+                  color: #a39d92;
+                "
+              >
+                A
+              </div>
+              <div>
+                <div
+                  style="
+                    font-family: &quot;Archivo Black&quot;, sans-serif;
+                    font-size: 21px;
+                    font-weight: 400;
+                  "
+                >
+                  Build trust visually
+                </div>
+                <p
+                  style="
+                    margin: 8px 0 0;
+                    font-size: 16px;
+                    line-height: 1.65;
+                    color: #6e6a63;
+                  "
+                >
+                  Consistent structure, generous spacing, no surprises between
+                  steps.
+                </p>
+              </div>
+            </div>
+            <div
+              data-reveal="1"
+              style="
+                padding: 26px 0;
+                border-top: 1px solid #e4dfd5;
+                display: grid;
+                grid-template-columns: 34px 1fr;
+                gap: 22px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 13px;
+                  color: #a39d92;
+                "
+              >
+                B
+              </div>
+              <div>
+                <div
+                  style="
+                    font-family: &quot;Archivo Black&quot;, sans-serif;
+                    font-size: 21px;
+                    font-weight: 400;
+                  "
+                >
+                  Show the whole number
+                </div>
+                <p
+                  style="
+                    margin: 8px 0 0;
+                    font-size: 16px;
+                    line-height: 1.65;
+                    color: #6e6a63;
+                  "
+                >
+                  Totals, fees and dates stated plainly, at the moment of the
+                  decision.
+                </p>
+              </div>
+            </div>
+            <div
+              data-reveal="1"
+              style="
+                padding: 26px 0;
+                border-top: 1px solid #e4dfd5;
+                display: grid;
+                grid-template-columns: 34px 1fr;
+                gap: 22px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 13px;
+                  color: #a39d92;
+                "
+              >
+                C
+              </div>
+              <div>
+                <div
+                  style="
+                    font-family: &quot;Archivo Black&quot;, sans-serif;
+                    font-size: 21px;
+                    font-weight: 400;
+                  "
+                >
+                  Cut the mental load
+                </div>
+                <p
+                  style="
+                    margin: 8px 0 0;
+                    font-size: 16px;
+                    line-height: 1.65;
+                    color: #6e6a63;
+                  "
+                >
+                  High readability over density. Fewer choices per screen,
+                  better labels.
+                </p>
+              </div>
+            </div>
+            <div
+              data-reveal="1"
+              style="
+                padding: 26px 0;
+                border-top: 1px solid #e4dfd5;
+                border-bottom: 1px solid #e4dfd5;
+                display: grid;
+                grid-template-columns: 34px 1fr;
+                gap: 22px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 13px;
+                  color: #a39d92;
+                "
+              >
+                D
+              </div>
+              <div>
+                <div
+                  style="
+                    font-family: &quot;Archivo Black&quot;, sans-serif;
+                    font-size: 21px;
+                    font-weight: 400;
+                  "
+                >
+                  Hand off cleanly
+                </div>
+                <p
+                  style="
+                    margin: 8px 0 0;
+                    font-size: 16px;
+                    line-height: 1.65;
+                    color: #6e6a63;
+                  "
+                >
+                  Organised components and ready-to-use pages, published for
+                  other designers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SYSTEM ============ -->
+      <section data-screen-label="System" style="padding: 0 40px 96px">
+        <div
+          data-reveal="1"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            border-radius: 18px;
+            border: 1px solid #e4dfd5;
+            background: #efece4;
+            padding: 44px;
+            position: relative;
+            overflow: hidden;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              gap: 24px;
+              flex-wrap: wrap;
+              align-items: baseline;
+            "
+          >
+            <div>
+              <div
+                style="
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.16em;
+                  color: #8a857c;
+                  margin-bottom: 14px;
+                "
+              >
+                05 &mdash; THE FILE
+              </div>
+              <h2
+                style="
+                  margin: 0;
+                  font-family: &quot;Archivo Black&quot;, sans-serif;
+                  font-size: clamp(28px, 3vw, 40px);
+                  line-height: 1.05;
+                  font-weight: 400;
+                  letter-spacing: -0.035em;
+                  max-width: 560px;
+                "
+              >
+                Published free, so other designers can take it apart.
+              </h2>
+              <p
+                style="
+                  margin: 18px 0 0;
+                  font-size: 16px;
+                  line-height: 1.7;
+                  color: #4a463f;
+                  max-width: 520px;
+                  text-wrap: pretty;
+                "
+              >
+                Components organised, pages ready to use. 300+ designers have
+                opened it on Figma Community.
+              </p>
+              <a
+                href="https://www.figma.com/community/file/1637424078757435293/vamax-fintech-dashboard"
+                target="_blank"
+                rel="noopener"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 9px;
+                  margin-top: 26px;
+                  background: #1a1917;
+                  color: #faf9f6;
+                  padding: 14px 26px;
+                  border-radius: 999px;
+                  font-size: 15px;
+                  font-weight: 500;
+                "
+                >Open on Figma Community &rarr;</a
+              >
+            </div>
+            <div style="display: flex; gap: 14px">
+              <div
+                style="
+                  width: 150px;
+                  padding: 16px;
+                  background: #c9e8d5;
+                  border-radius: 3px;
+                  box-shadow: 0 14px 26px -14px rgba(26, 25, 23, 0.28);
+                  animation: bobB 8s ease-in-out infinite;
+                "
+              >
+                <div style="font-size: 13px; line-height: 1.45; color: #123024">
+                  22 saves and counting
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+              gap: 16px;
+              margin-top: 40px;
+            "
+          >
+            <div
+              style="
+                height: 200px;
+                border-radius: 12px;
+                border: 1px solid #dcd5f2;
+                background: #f4f1fd;
+                overflow: hidden;
+              "
+            >
+              <img
+                src="assets/vamax-credit-choice.png"
+                alt="Credit selection"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: top center;
+                  display: block;
+                "
+              />
+            </div>
+            <div
+              style="
+                height: 200px;
+                border-radius: 12px;
+                border: 1px solid #dcd5f2;
+                background: #f4f1fd;
+                overflow: hidden;
+              "
+            >
+              <img
+                src="assets/vamax-installments.png"
+                alt="Installments"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: top center;
+                  display: block;
+                "
+              />
+            </div>
+            <div
+              style="
+                height: 200px;
+                border-radius: 12px;
+                border: 1px solid #dcd5f2;
+                background: #f4f1fd;
+                overflow: hidden;
+              "
+            >
+              <img
+                src="assets/vamax-stores.png"
+                alt="Stores"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: top center;
+                  display: block;
+                "
+              />
+            </div>
+            <div
+              style="
+                height: 200px;
+                border-radius: 12px;
+                border: 1.5px dashed #cfc9bd;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: &quot;JetBrains Mono&quot;, monospace;
+                font-size: 10px;
+                color: #a39d92;
+                text-align: center;
+                line-height: 1.7;
+              "
+            >
+              ADD MORE<br />FRAMES
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ NEXT / CTA ============ -->
+      <section
+        data-screen-label="Next"
+        style="padding: 88px 40px 40px; background: #1a1917; color: #faf9f6"
+      >
+        <div style="max-width: 1180px; margin: 0 auto">
+          <div
+            data-reveal="1"
+            style="
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 12px;
+              letter-spacing: 0.16em;
+              color: #ffd84d;
+              margin-bottom: 20px;
+            "
+          >
+            NEXT
+          </div>
+          <h2
+            data-reveal="1"
+            data-reveal-delay="60"
+            style="
+              margin: 0;
+              font-family: &quot;Archivo Black&quot;, sans-serif;
+              font-size: clamp(34px, 4.4vw, 62px);
+              line-height: 0.98;
+              font-weight: 400;
+              letter-spacing: -0.04em;
+              max-width: 780px;
+            "
+          >
+            Want the rest of the work, or a conversation?
+          </h2>
+          <div
+            data-reveal="1"
+            data-reveal-delay="140"
+            style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px"
+          >
+            <a
+              href="index.html#work"
+              style="
+                background: #ffd84d;
+                color: #1a1917;
+                padding: 14px 26px;
+                border-radius: 999px;
+                font-size: 15px;
+                font-weight: 600;
+              "
+              >Back to all work</a
+            >
+            <a
+              href="index.html#contact"
+              style="
+                border: 1.5px solid rgba(250, 249, 246, 0.3);
+                color: #faf9f6;
+                padding: 14px 26px;
+                border-radius: 999px;
+                font-size: 15px;
+                font-weight: 500;
+              "
+              >Get in touch</a
+            >
+          </div>
+          <div
+            style="
+              margin-top: 72px;
+              padding-top: 26px;
+              border-top: 1px solid rgba(250, 249, 246, 0.14);
+              display: flex;
+              justify-content: space-between;
+              gap: 20px;
+              flex-wrap: wrap;
+              font-family: &quot;JetBrains Mono&quot;, monospace;
+              font-size: 11px;
+              color: rgba(250, 249, 246, 0.44);
+            "
+          >
+            <div>FATEMEH BEHBOODIAN &middot; VAMAX CASE STUDY</div>
+            <a href="index.html" style="color: rgba(250, 249, 246, 0.44)"
+              >HOME &uarr;</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/site.js"></script>
+  </body>
 </html>
